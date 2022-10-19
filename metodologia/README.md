@@ -45,4 +45,10 @@ Para o front-end foi utilizado o Angular que é uma plataforma baseada em Typesc
          
 #### Contribuições pessoais:
 
-Desenvolvimento no front-end, com 
+Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento tivemos vários desafios na criação de telas, como:
+* Criação das telas de cadastro de produtos; 
+* Tela de cadastro de promoções;
+* Tela de cadastro de categorias;
+* Tela para representar o carrinho de compras;
+* Tela de listagem e edição de produtos.
+Além disso, tivemos o desafio de criar as requisições http de acordo com que foi desenvolvido no back end, consiliando o objeto json que seria enviado atrvés das requisições POST e PUT, e adaptando no layout os objetos recebidos através da requisição GET, além disso, enviar as informações corretas para a requisição DELETE
