@@ -1,4 +1,4 @@
-package anti_pattern;
+
 
 public class DescontoNatal extends Desconto{
 	

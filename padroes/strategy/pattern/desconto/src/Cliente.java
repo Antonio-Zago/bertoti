@@ -1,4 +1,4 @@
-package strategy_pattern;
+
 
 public class Cliente {
 	private Desconto desconto;

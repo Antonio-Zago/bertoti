@@ -1,4 +1,4 @@
-package strategy_pattern;
+
 
 public class DescontoNatal  implements Desconto{
 
