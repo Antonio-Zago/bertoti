@@ -1,4 +1,4 @@
-package observer_lista_contatos;
+
 
 public class Celular implements Observer{
 

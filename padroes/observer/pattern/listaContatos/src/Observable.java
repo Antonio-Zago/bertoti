@@ -1,4 +1,4 @@
-package observer_lista_contatos;
+
 
 public interface Observable {
 	public void registerObserver(Observer o);
