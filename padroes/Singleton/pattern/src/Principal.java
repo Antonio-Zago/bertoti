@@ -11,6 +11,8 @@ public class Principal {
 		
 		Login login = Login.getInstance(usuario);
 		
+		System.out.print(login.getUsuario().getEmail());
+		
 		
 	}
 }
