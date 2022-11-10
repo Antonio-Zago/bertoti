@@ -45,10 +45,81 @@ Para o front-end foi utilizado o Angular que é uma plataforma baseada em Typesc
          
 #### Contribuições pessoais:
 
-Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento tivemos vários desafios na criação de telas, como:
+Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento tive vários desafios na criação de telas, como:
+* Criação da tela home; </br>
+   Desenvolvi a tela inicial da aplicação, utilizando o bootstrap para estilização da página, criação do componente home em TypeScript 
+* Criação da tela de listagem de produtos</br>
+   Desenvolvimento da tela com uma tabela para exibição dos dados adquiridos do banco de dados, criação da classe de services para fazer a conexão com o banco de dados e executar a requisição de getAll de produtos, utilizando api httpClient do angular
+  
+   <details close>
+     <summary>Código lista de produtos html</summary>
+     
+     ```
+     
+        <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.description }}</td>
+
+                        <td>
+                            <select class="form-control" type="number" [(ngModel)]="product.quantidade">
+                                <option [value]="n" *ngFor="let n of lista" >
+                                  <p>{{n}}</p>
+                                </option>
+                            </select>
+                        </td>
+
+                        <td>
+
+                            <button class="btn btn-primary" routerLink="/products-form/{{ product.id }}">
+                                <i class="fa fa-edit"></i>
+                            </button>
+
+                           
+
+                        </td>
+
+                        <td>
+                            <button  class="btn btn-success" (click)="addProduct(product)" >
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </td>
+
+                        <td>
+                            <button  class="btn btn-danger" (click)="preDelete(product)"
+                                    data-toggle="modal" data-target="#deleteModal" >
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                
+                    </tr>
+                </tbody>
+            </table> 
+            
+            
+   
+
+
 * Criação das telas de cadastro de produtos; 
 * Tela de cadastro de promoções;
 * Tela de cadastro de categorias;
 * Tela para representar o carrinho de compras;
-* Tela de listagem e edição de produtos.
-Além disso, tivemos o desafio de criar as requisições http de acordo com que foi desenvolvido no back end, consiliando o objeto json que seria enviado atrvés das requisições POST e PUT, e adaptando no layout os objetos recebidos através da requisição GET, além disso, enviar as informações corretas para a requisição DELETE
+* Tela de listagem e edição de produtos;
+</br>
+Além disso, tive o desafio de criar as requisições http de acordo com que foi desenvolvido no back end, consiliando o objeto json que seria enviado através das requisições POST e PUT, e adaptando no layout os objetos recebidos através da requisição GET, além disso, enviar as informações corretas para a requisição DELETE.
+
+
