@@ -43,7 +43,7 @@ Dessa forma, foi desenvolvido o PromoAll
 Para o front-end foi utilizado o Angular que é uma plataforma baseada em Typescript, para criação das telas de interação com o cliente, e para realizar as requisições para a API que foi desenvolvida. O Java com o framework Spring foi utilizado para criação da API de backend, com a criação das rotas HTTP, conexão com o banco de dados, tratamento de erros e aplicação das regras de negócio. Como banco de dados, foi utilizado o H2 que é um sistema de gerenciamento de banco de dados relacional em memória
          
          
-#### Contribuições pessoais:
+### Contribuições pessoais:
 
 Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento tive vários desafios na criação de telas, como:
 * Criação da tela home; </br>
@@ -196,26 +196,90 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
             </table>
    </details>
    
-* Criação da função no carrinho de compras para aplicação das promoções</br>
+   
+   <details>
+      <summary>Código TS para exibição no carrinho de compras </summary>
+      
+          ngOnInit(): void {
+            this.products = [];
+            this.finalPrice = 0;
+            this.product;
+            this.discount;
+            this.categoria=0;
+            this.noDiscount = 0;
+            this.lista = [];
+            this.teste = [];
+            Cart.products.forEach(element => {
+              this.product = element;
+              this.id  = element.id;
+              this.quantidade = element.quantidade;
+              this.categoria =  element.id;
+              this.products.push(element);
 
-  <details>
-      <summary>Código html para exibição do valor do carrinho aplicado os descontos </summary>
-                 <tfoot>
-                     <tr>
-                         <th>Total Price:</th>
-                         <th>{{ finalPrice }}</th>
-                         <th></th>
-                         <th></th>
-                     </tr>
-                     <tr>
-                         <th>Price Without Discount:</th>
-                         <th>{{ noDiscount }}</th>
-                         <th></th>
-                         <th></th>
-                     </tr>
+                this.total = this.noDiscount += (element.price  * element.quantidade);
 
-                 </tfoot>
+                this.service.getDiscount(this.id, this.quantidade, this.total, this.categoria).subscribe(
+                    response =>
+                    { const product : Product = new Product();
+                      this.discount = response;
+                      this.product.discount = this.discount
+                      this.finalPrice = this.finalPrice += (element.price * element.quantidade)-(this.discount)
+                      console.log("teste", this.categoria)
+                    errorResponse => console.log(errorResponse)
+                })
+            });
+
+          }
+
    </details>
+   
+   
+   
+* Criação da função no carrinho de compras para aplicação das promoções; </br>
+    Desenvolvimento em TypeScript da função para aplicaçação dos descontos e desenvolvimento para visualização em html
+    <details>
+      <summary>Código html para exibição do valor do carrinho aplicado os descontos  </summary>
+      
+            <tr>
+                    <th>Total Price:</th>
+                    <th>{{ finalPrice }}</th>
+                    <th></th>
+                    <th></th>
+                   </tr>
+                   <tr>
+                     <th>Price Without Discount:</th>
+                     <th>{{ noDiscount }}</th>
+                     <th></th>
+                     <th></th>
+             </tr>
+   </details>
+   
+* Criação do botão para adicionar produto no carrinho </br>
+    Desenvolvimento do botão para adicionar o produto selecionado pelo cliente no carrinho de compras
+    <details>
+      <summary>Código html do botão  </summary>
+      
+           <button  class="btn btn-success" (click)="addProduct(product)" >
+              <i class="fa fa-plus"></i>
+           </button>
+   </details>
+   
+   <details>
+      <summary>Código TS para adição no carrinho  </summary>
+      
+           addProduct(product : Product){
+
+             if(product.quantidade != null){ 
+               Cart.products.push(product);
+             }
+
+             this.ngOnInit();
+           }
+   </details>
+   
+   
+   
+
 
 </br>
 Além disso, tive o desafio de criar as requisições http de acordo com que foi desenvolvido no back end, consiliando o objeto json que seria enviado através das requisições POST e PUT, e adaptando no layout os objetos recebidos através da requisição GET, além disso, enviar as informações corretas para a requisição DELETE.
