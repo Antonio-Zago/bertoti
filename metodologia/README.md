@@ -284,4 +284,24 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
 </br>
 Além disso, tive o desafio de criar as requisições http de acordo com que foi desenvolvido no back end, consiliando o objeto json que seria enviado através das requisições POST e PUT, e adaptando no layout os objetos recebidos através da requisição GET, além disso, enviar as informações corretas para a requisição DELETE.
 
+### Aprendizados efetivos HS:
 
+  Dentro do desenvolvimento do sistema de E-commerce para a MidAll obtive diversos aprendizados novos, e aprofundei em outros, foram eles:
+  
+* Desenvolvimento de telas com Angular; </br>
+   Para criação das telas foi utilizado o html e css, além do bootstrap como framework para o frontend. 
+* Desenvolvimento com a linguagem TypeScript; </br>
+   Foi necessário aprender sobre a linguagem TypeScript para criação dos arquivos service para efetivar as requisições HTTP
+* Protocolo HTTP;
+* Requisições GET, POST, PUT e DELETE; </br>
+   Aprendi mais sobre essas requisições e como efetuar elas utilizando o Angular.
+* Criação de um objeto JSON para envio nas requisições;
+* Aprendi como fazer requisições no backend utilizando a api httpClient do Angular;
+* Aprofundamento em aprendizados de banco de dados, DML, DQL, criação arquitetura de tabelas ;   
+* Criação de um projeto em Vue; </br>
+   Foi necessário aprender a estrutura de pastas de um projeto em Angular.</br>
+   
+
+  Os conhecimentos adquiridos em aula foram essencias para desenvolvimento desse projeto, aplicamos os conhecimentos aprendidos para seguir os padrões de arquitetura, torná-lo componentizável e seguindo modos de construção comuns aos utilizados no mercado e comunidade. Criação do banco de dados utilizado na aplicação, seguindo o padrão de chaves primaria e estrangeiras nas tabelas, criação do modelo e entidades do banco. Criação do padrão de pastas tanto no frontend como no backend. Aprendizados dos frameworks utilizados, vue e spring.
+  
+  
