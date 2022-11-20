@@ -51,10 +51,8 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
 * Criação da tela de listagem de produtos</br>
    Desenvolvimento da tela com uma tabela para exibição dos dados adquiridos do banco de dados, criação da classe de services para fazer a conexão com o banco de dados e executar a requisição de getAll de produtos, utilizando api httpClient do angular
   
-   <details close>
+   <details>
      <summary>Código lista de produtos html</summary>
-     
-     ```
      
         <table class="table table-condensed table-hover">
                 <thead>
@@ -109,16 +107,116 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
                     </tr>
                 </tbody>
             </table> 
+    </details>
+    <details >
+     <summary>Código da função que faz a requisição na classe service</summary>
+     
+          ngOnInit(): void {
+             this.service
+               .getProducts()
+               .subscribe( res => this.products = res )
+           }
+     
+    
             
-            
+     </details>
    
 
 
-* Criação das telas de cadastro de produtos; 
-* Tela de cadastro de promoções;
-* Tela de cadastro de categorias;
-* Tela para representar o carrinho de compras;
-* Tela de listagem e edição de produtos;
+* Criação das telas de cadastro de produtos; </br>
+   Desenvolvimento do formulário de cadastro de produtos, criação da classe de services para envio da requisição POST com objeto do tipo produto.
+   
+   <details>
+      <summary>Código da função na classe service para criação e atualização de produtos </summary>
+      
+          onSubmit(){
+
+           if(this.id){
+             this.service.update(this.id, this.product)
+             .subscribe( res => {
+               this.success = true;
+               this.errors = null;
+             }
+             )
+           }
+           else{
+
+             this.service
+               .insert(this.product)
+               .subscribe( res =>{
+                 this.success = true;
+                 this.errors = null;
+
+               }, errorRes =>{
+                 this.success = false;
+                 this.errors = errorRes.error.errors
+
+               }
+
+               )
+           }
+
+
+         }
+   </details>
+   
+* Criação da tela de carrinho de compras;</br>
+   Desenvolvimento de uma tela para mostrar todos os produtos selecionados pelo usuário no sistema
+   <details>
+      <summary>Código html para exibição dos produtos </summary>
+      
+          <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Discount</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of products">
+                        <td>{{ p.name }}</td>
+                        <td>{{ p.price }}</td>
+                        <td>{{ p.quantidade}}</td>
+                        <td>-{{ p.discount }}</td>
+
+                        <td>
+                            <button  class="btn btn-warning" (click)="deleteProduct(p)">
+                                <i class="fa fa-trash"></i>
+                                Delete
+                            </button>
+                        </td>
+
+
+                    </tr>
+                </tbody>
+                
+            </table>
+   </details>
+   
+* Criação da função no carrinho de compras para aplicação das promoções</br>
+
+  <details>
+      <summary>Código html para exibição do valor do carrinho aplicado os descontos </summary>
+                 <tfoot>
+                     <tr>
+                         <th>Total Price:</th>
+                         <th>{{ finalPrice }}</th>
+                         <th></th>
+                         <th></th>
+                     </tr>
+                     <tr>
+                         <th>Price Without Discount:</th>
+                         <th>{{ noDiscount }}</th>
+                         <th></th>
+                         <th></th>
+                     </tr>
+
+                 </tfoot>
+   </details>
+
 </br>
 Além disso, tive o desafio de criar as requisições http de acordo com que foi desenvolvido no back end, consiliando o objeto json que seria enviado através das requisições POST e PUT, e adaptando no layout os objetos recebidos através da requisição GET, além disso, enviar as informações corretas para a requisição DELETE.
 
