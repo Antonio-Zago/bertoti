@@ -53,8 +53,7 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
   
    <details>
      <summary>Código lista de produtos html</summary>
-        
-        *Tabela feita em html listando através de um ngFor do Angulasr os produtos
+       
         
         <table class="table table-condensed table-hover">
                 <thead>
@@ -110,10 +109,13 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
                 </tbody>
             </table> 
     </details>
+    
+    * Tabela feita em html listando através de um ngFor do Angular os produtos que estão na lista de produtos que foram inseridas pela requisição get em produtos
+     </br>
     <details >
      <summary>Código da função que faz a requisição na classe service</summary>
           
-          *Chamada do método de services para requisição get em produtos
+          
           
           ngOnInit(): void {
              this.service
@@ -124,7 +126,8 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
     
             
      </details>
-   
+     
+     * Chamada do método de services para requisição get em produtos, retornando todos os produtos cadastrados no banco e inserindo em uma lista products
 
 
 * Criação das telas de cadastro de produtos; </br>
@@ -166,49 +169,15 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
          }
    </details>
    
+   * Função que chama a requisição POST de produto, para inserção através do método na classe services
+   
 * Criação da tela de carrinho de compras;</br>
    Desenvolvimento de uma tela para mostrar todos os produtos selecionados pelo usuário no sistema
-   <details>
-      <summary>Código html para exibição dos produtos </summary>
-          
-          * Tabela feita em html listando através de um ngFor do Angulasr os produtos
-          
-          <table class="table table-condensed table-hover">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Discount</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let p of products">
-                        <td>{{ p.name }}</td>
-                        <td>{{ p.price }}</td>
-                        <td>{{ p.quantidade}}</td>
-                        <td>-{{ p.discount }}</td>
-
-                        <td>
-                            <button  class="btn btn-warning" (click)="deleteProduct(p)">
-                                <i class="fa fa-trash"></i>
-                                Delete
-                            </button>
-                        </td>
-
-
-                    </tr>
-                </tbody>
-                
-            </table>
-   </details>
-   
    
    <details>
       <summary>Código TS para exibição no carrinho de compras </summary>
           
-          * Carrinho de compras sendo exibido através de uma lista como uma lista
+          
           
           ngOnInit(): void {
             this.products = [];
@@ -243,6 +212,7 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
 
    </details>
    
+    * Carrinho de compras em html para listagem dos produtos
    
    
 * Criação da função no carrinho de compras para aplicação das promoções; </br>
@@ -250,7 +220,7 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
     <details>
       <summary>Código html para exibição do valor do carrinho aplicado os descontos  </summary>
             
-            Aplicando descontos no carrinho de compras e armazenando em uma variavel finalPrice
+            
             
             <tr>
                     <th>Total Price:</th>
@@ -266,12 +236,14 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
              </tr>
    </details>
    
+   * Aplicando descontos no carrinho de compras e armazenando em uma variavel finalPrice 
+   
 * Criação do botão para adicionar produto no carrinho </br>
     Desenvolvimento do botão para adicionar o produto selecionado pelo cliente no carrinho de compras
     <details>
       <summary>Código html do botão  </summary>
            
-           * Adicionando produto na lista que representa o carrinho de compras
+           
            
            <button  class="btn btn-success" (click)="addProduct(product)" >
               <i class="fa fa-plus"></i>
@@ -291,7 +263,7 @@ Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento
            }
    </details>
    
-   
+   * Adicionando produto na lista que representa o carrinho de compras
    
 
 
