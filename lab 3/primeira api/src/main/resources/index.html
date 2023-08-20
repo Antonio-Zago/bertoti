@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Estacionamento</title>
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script>
+
+	    
+	    window.onload = function() {
+			const form = document.getElementById('form');
+		
+			form.addEventListener('submit',function(e){
+				e.preventDefault();
+				
+				const formData = new FormData(form);
+				const formEspecificacao = new FormData(form)
+				
+				let placa = document.getElementById('inputPlaca').value;
+				let modelo = document.getElementById('inputModelo').value;
+				let cor = document.getElementById('inputCor').value;
+				let marca = document.getElementById('inputMarca').value;
+
+
+				console.log([...formData]);
+				console.log([...formEspecificacao]);
+				
+				axios.post('http://localhost:8080/carros', 
+				{
+					placa:placa, 
+					espec:{
+						modelo:modelo,
+						cor:cor,
+						marca:marca
+					}
+				})
+					.then(res => {
+						console.log(res)
+						window.location.reload()
+					})
+					.catch(err => console.log(err))
+			})
+			
+			
+			var list = document.getElementById('list')
+  
+			  axios.get('http://localhost:8080/carros')
+		    .then(function(response){
+	            var repos = response.data
+	            console.log(repos)
+	            for(var conteudo in repos){
+					console.log(repos[conteudo].espec.marca)
+					console.log(repos[conteudo])
+	                item = document.createElement('tr')
+	                conteudoTabelaPlaca = document.createElement('td')
+	                conteudoTabelaMarca = document.createElement('td')
+	                conteudoTabelaModelo = document.createElement('td')
+	                conteudoTabelaCor = document.createElement('td')
+	                
+	                var textItemPlaca = document.createTextNode(repos[conteudo].placa)
+	                var textItemMarca = document.createTextNode(repos[conteudo].espec.marca)
+	                var textItemModelo = document.createTextNode(repos[conteudo].espec.modelo)
+	                var textItemCor = document.createTextNode(repos[conteudo].espec.cor)
+	                
+	                conteudoTabelaPlaca.appendChild(textItemPlaca)
+	                conteudoTabelaMarca.appendChild(textItemMarca)
+	                conteudoTabelaModelo.appendChild(textItemModelo)
+	                conteudoTabelaCor.appendChild(textItemCor)
+	                
+	                item.appendChild(conteudoTabelaPlaca)
+	                item.appendChild(conteudoTabelaMarca)
+	                item.appendChild(conteudoTabelaModelo)
+	                item.appendChild(conteudoTabelaCor)
+	                
+	                list.appendChild(item)
+	            }
+        	})
+		    .catch(error => console.log(error))
+		  
+		};
+		
+		
+	</script>
+		
+
+   
+  </head>
+
+
+  <body>
+		
+	<div class="container">
+	  	<table class="table">
+			<thead>
+				<tr>
+				    <th scope="col">Placa</th>
+				    <th scope="col">Marca</th>
+				    <th scope="col">Modelo</th>
+				    <th scope="col">Cor</th>
+				</tr>
+			</thead>
+			<tbody id="list">
+				
+			</tbody>
+			
+
+		</table>
+		
+		<form id="form">
+		  <div class="form-group">
+		    <label for="inputPlaca">Placa</label>
+		    <input type="text" class="form-control" id="inputPlaca" >
+		  </div>
+		  <div class="form-group">
+		    <label for="inputMarca">Marca</label>
+		    <input type="text" class="form-control" id="inputMarca" >
+		  </div>
+		  <div class="form-group">
+		    <label for="inputModelo">Modelo</label>
+		    <input type="text" class="form-control" id="inputModelo" >
+		  </div>
+		  <div class="form-group">
+		    <label for="inputCor">Cor</label>
+		    <input type="text" class="form-control" id="inputCor" >
+		  </div>
+		  <button type="submit" class="btn btn-primary">Cadastrar</button>
+		</form>
+
+	</div>
+  		
+		
+
+
+
+		
+  </body>
+  
+</html>
