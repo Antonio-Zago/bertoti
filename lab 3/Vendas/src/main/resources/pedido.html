@@ -47,6 +47,18 @@
         </thead>
         <tbody id="clienteTableBody"></tbody>
     </table>
+    
+    <form id="cadastroForm">
+		<select class="form-select"  id ="selectCliente" >
+		</select>
+		<select class="form-select"  id ="selectFornecedor" >
+		</select>
+		<select class="form-select"  id ="selectProduto" >
+		</select>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+    
+    
 
 
 </div>
@@ -72,11 +84,15 @@ carregarClientes();
 
     document.addEventListener("DOMContentLoaded", function () {
         const clienteTableBody = document.getElementById('clienteTableBody');
+        const clienteSelect = document.getElementById('selectCliente');
+        const fornecedorSelect = document.getElementById('selectFornecedor');
+        const produtoSelect = document.getElementById('selectProduto');
         const cadastroForm = document.getElementById('cadastroForm');
 
         // Função para renderizar os clientes na tabela
         function renderizarClientes(clientes) {
             clienteTableBody.innerHTML = '';
+            
             clientes.forEach(cliente => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
@@ -86,7 +102,39 @@ carregarClientes();
                     <td>${cliente.valorPedido}</td>
                     <td>${cliente.nomeFornecedor}</td>
                 `;
+                
+
                 clienteTableBody.appendChild(row);
+            });
+        }
+        
+        function renderizarFornecedores(fornecedores) {
+            
+            fornecedores.forEach(fornecedor => {               
+                const rowSelect= document.createElement('option');
+                rowSelect.innerHTML = `${fornecedor.nome}`;
+                rowSelect.value = `${fornecedor.id}`;
+                fornecedorSelect.appendChild(rowSelect) ;
+            });
+        }
+        
+        function renderizarProdutos(produtos) {
+            
+            produtos.forEach(produto => {               
+                const rowSelect= document.createElement('option');
+                rowSelect.innerHTML = `${produto.nome}`;
+                rowSelect.value = `${produto.id}`;
+                produtoSelect.appendChild(rowSelect) ;
+            });
+        }
+        
+        function renderizarClientes2(produtos) {
+            
+            produtos.forEach(produto => {               
+                const rowSelect= document.createElement('option');
+                rowSelect.innerHTML = `${produto.nome}`;
+                rowSelect.value = `${produto.id}`;
+                clienteSelect.appendChild(rowSelect) ;
             });
         }
         
@@ -101,11 +149,60 @@ carregarClientes();
                 })
                 .catch(error => console.error(error));
         }
+        
+        function carregarFornecedores() {
+            axios.get('http://localhost:8080/fornecedores')
+                .then(response => {
+                    const clientes = response.data;
+                    renderizarFornecedores(clientes);
+                })
+                .catch(error => console.error(error));
+        }
+        
+        function carregarProdutos() {
+            axios.get('http://localhost:8080/produtos')
+                .then(response => {
+                    const clientes = response.data;
+                    renderizarProdutos(clientes);
+                })
+                .catch(error => console.error(error));
+        }
+        
+        function carregarClientes2() {
+            axios.get('http://localhost:8080/clientes')
+                .then(response => {
+                    const clientes = response.data;
+                    renderizarClientes2(clientes);
+                })
+                .catch(error => console.error(error));
+        }
 
+		cadastroForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            console.log('dasda');
 
+            const cliente = document.getElementById('selectCliente').value;
+            const produto = document.getElementById('selectProduto').value;
+            const fornecedor = document.getElementById('selectFornecedor').value;
+            
+            console.log('dasda2');
+
+            // Requisição para cadastrar um novo cliente
+            axios.post('http://localhost:8080/pedidos', { idCliente:cliente, idProduto:produto, idFornecedor:fornecedor })
+                .then(response => {
+                    console.log(response);
+                    // Atualiza a tabela após o cadastro
+                    carregarClientes();
+                })
+                .catch(error => console.error(error));
+        });
 
         // Carrega os clientes ao inicializar a página
         carregarClientes();
+        carregarClientes2();
+        carregarFornecedores();
+        carregarProdutos();
     });
 </script>
 

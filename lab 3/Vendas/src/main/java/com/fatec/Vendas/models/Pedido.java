@@ -3,12 +3,31 @@ package com.fatec.Vendas.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fatec.Vendas.dto.PedidoForm;
+
 public class Pedido {
 	
 	public static List<Pedido> pedidos = new ArrayList<>();
 	public static Integer idIncremento = 0;
 	
 	public static Pedido addPedido(Pedido pedido) {
+		pedido.id = idIncremento;
+		idIncremento++;
+		pedidos.add(pedido);
+		return pedido;
+	}
+	
+	public static Pedido addPedidoDto(PedidoForm dto) {
+		Pedido pedido = new Pedido();
+		List<Integer> produtos = new ArrayList<Integer>();
+		produtos.add(dto.getIdProduto());
+
+		
+		pedido.setIdCliente(dto.getIdCliente());
+		pedido.setIdFornecedor(dto.getIdFornecedor());
+		pedido.setProdutos(produtos );
+		pedido.setValorPedido(Produto.encontrarPorId(dto.getIdProduto()).getValor());
+		
 		pedido.id = idIncremento;
 		idIncremento++;
 		pedidos.add(pedido);

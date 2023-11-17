@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fatec.Vendas.dto.PedidoDto;
+import com.fatec.Vendas.dto.PedidoForm;
 import com.fatec.Vendas.models.Cliente;
 import com.fatec.Vendas.models.Fornecedor;
 import com.fatec.Vendas.models.Pedido;
@@ -36,14 +37,16 @@ public class PedidoController {
 	Iterable<PedidoDto> getPedidos() {
 		
 		List<Pedido> pedidos = Pedido.pedidos;
-		List<String> nomeProdutos = new ArrayList<String>();
+		
 		List<PedidoDto> dtos = new ArrayList<PedidoDto>();
 		
 		
 		for (Pedido pedido : pedidos) {
 			Cliente cliente = Cliente.encontrarPorId(pedido.getIdCliente());
 			Fornecedor fornecedor = Fornecedor.encontrarPorId(pedido.getIdFornecedor());
+			List<String> nomeProdutos = new ArrayList<String>();
 			for (Integer produtoId : pedido.getProdutos()) {
+				
 				Produto produto = Produto.encontrarPorId(produtoId);
 				nomeProdutos.add(produto.getNome());
 			}
@@ -61,8 +64,8 @@ public class PedidoController {
 	}
 	
 	@PostMapping
-	Pedido postCarro(@RequestBody Pedido pedido) {
+	Pedido postCarro(@RequestBody PedidoForm pedido) {
 		
-		return Pedido.addPedido(pedido);
+		return Pedido.addPedidoDto(pedido);
 	}
 }
