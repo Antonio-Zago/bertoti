@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+
+    <!-- Adicione os links para os estilos do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Sua Marca</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="fornecedor.html">Fornecedor</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pedido.html">Pedido</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="produto.html">Produto</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Ações</th>
+        </tr>
+        </thead>
+        <tbody id="clienteTableBody"></tbody>
+    </table>
+
+    <form id="cadastroForm">
+        <div class="form-group">
+            <label for="inputNome">Nome</label>
+            <input type="text" class="form-control" id="inputNome" required>
+        </div>
+        <div class="form-group">
+            <label for="inputCpf">CPF</label>
+            <input type="text" class="form-control" id="inputCpf" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</div>
+
+<!-- Adicione os scripts do Bootstrap, jQuery e Axios -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+<script>
+	function excluirCliente(id) {
+    axios.delete(`http://localhost:8080/clientes/${id}`)
+        .then(response => {
+            console.log(response);
+            // Atualiza a tabela após a exclusão
+            
+        
+carregarClientes();
+        })
+        .catch(error => console.error(error));
+}
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const clienteTableBody = document.getElementById('clienteTableBody');
+        const cadastroForm = document.getElementById('cadastroForm');
+
+        // Função para renderizar os clientes na tabela
+        function renderizarClientes(clientes) {
+            clienteTableBody.innerHTML = '';
+            clientes.forEach(cliente => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${cliente.id}</td>
+                    <td>${cliente.nome}</td>
+                    <td>${cliente.cpf}</td>
+                    <td>
+                        <a href="editar.html?id=${cliente.id}&nome=${encodeURIComponent(cliente.nome)}&cpf=${encodeURIComponent(cliente.cpf)}" class="btn btn-warning">Editar</a>
+                        <button type="button" class="btn btn-danger" onclick="excluirCliente(${cliente.id})">Excluir</button>
+                    </td>
+                `;
+                clienteTableBody.appendChild(row);
+            });
+        }
+        
+        function excluirCliente(id) {
+        axios.delete(`http://localhost:8080/clientes/${id}`)
+            .then(response => {
+                
+   
+console.log(response);
+                // Atualiza a tabela após a exclusão
+                carregarClientes();
+            })
+            .catch(error => console.error(error));
+    }
+
+        // Requisição para obter os clientes ao carregar a página
+        function carregarClientes() {
+            axios.get('http://localhost:8080/clientes')
+                .then(response => {
+                    const clientes = response.data;
+                    renderizarClientes(clientes);
+                })
+                .catch(error => console.error(error));
+        }
+
+        // Evento de submissão do formulário de cadastro
+        cadastroForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('inputNome').value;
+            const cpf = document.getElementById('inputCpf').value;
+
+            // Requisição para cadastrar um novo cliente
+            axios.post('http://localhost:8080/clientes', { nome, cpf })
+                .then(response => {
+                    console.log(response);
+                    // Atualiza a tabela após o cadastro
+                    carregarClientes();
+                })
+                .catch(error => console.error(error));
+        });
+
+
+        // Carrega os clientes ao inicializar a página
+        carregarClientes();
+    });
+</script>
+
+</body>
+</html>

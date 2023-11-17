@@ -16,9 +16,9 @@ public class Pedido {
 	}
 
 	
-	public Pedido(Integer idCliente, Integer idProduto, Double valorPedido, Integer idFornecedor) {
+	public Pedido(Integer idCliente, List<Integer> produtos, Double valorPedido, Integer idFornecedor) {
 		this.idCliente = idCliente;
-		this.idProduto = idProduto;
+		this.produtos = produtos;
 		this.valorPedido = valorPedido;
 		this.idFornecedor = idFornecedor;
 	}
@@ -30,11 +30,24 @@ public class Pedido {
 	
 	private Integer idCliente;
 	
-	private Integer idProduto;
+	private List<Integer> produtos;
 	
 	private Double valorPedido;
 	
 	private Integer idFornecedor;
+
+	
+	
+	
+	public List<Integer> getProdutos() {
+		return produtos;
+	}
+
+
+	public void setProdutos(List<Integer> produtos) {
+		this.produtos = produtos;
+	}
+
 
 	public Integer getId() {
 		return id;
@@ -56,14 +69,9 @@ public class Pedido {
 	}
 
 
-	public Integer getIdProduto() {
-		return idProduto;
-	}
+	
 
 
-	public void setIdProduto(Integer idProduto) {
-		this.idProduto = idProduto;
-	}
 
 
 	public Double getValorPedido() {

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+
+    <!-- Adicione os links para os estilos do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Editar Cliente</h2>
+    <form id="editarForm">
+        <div class="form-group">
+            <label for="inputNome">Nome</label>
+            <input type="text" class="form-control" id="inputNome" required>
+        </div>
+        <div class="form-group">
+            <label for="inputCpf">CPF</label>
+            <input type="text" class="form-control" id="inputCpf" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    </form>
+</div>
+
+<!-- Adicione os scripts do Bootstrap e do jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const editarForm = document.getElementById('editarForm');
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        const nome = decodeURIComponent(urlParams.get('nome') || '');
+        const cpf = decodeURIComponent(urlParams.get('cpf') || '');
+
+        document.getElementById('inputNome').value = nome;
+        document.getElementById('inputCpf').value = cpf;
+
+        editarForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const novoNome = document.getElementById('inputNome').value;
+            const novoCpf = document.getElementById('inputCpf').value;
+
+            console.log('ID:', id);
+            console.log('Novo Nome:', novoNome);
+            console.log('Novo CPF:', novoCpf);
+
+            axios.put(`http://localhost:8080/clientes/${id}`, { nome: novoNome, cpf: novoCpf })
+                .then(response => {
+                    console.log(response);
+                    // Adicione aqui a lógica para lidar com a resposta do servidor (por exemplo, redirecionar para outra página)
+                })
+                .catch(error => console.error(error));
+        });
+    });
+</script>
+
+</body>
+</html>

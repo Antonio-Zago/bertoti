@@ -1,6 +1,7 @@
 package com.fatec.Vendas.models;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Fornecedor {
@@ -13,6 +14,36 @@ public class Fornecedor {
 		idIncremento++;
 		fornecedores.add(fornecedor);
 		return fornecedor;
+	}
+	
+	public static Fornecedor encontrarPorId(int idProcurado) {
+        for (Fornecedor objeto : fornecedores) {
+            if (objeto.getId() == idProcurado) {
+                return objeto;
+            }
+        }
+        return null;
+	}
+	
+	public static Fornecedor atualizar(int idProcurado, Fornecedor clienteForm) {
+		Fornecedor cliente = Fornecedor.encontrarPorId(idProcurado);
+		
+		cliente.setNome(clienteForm.getNome());
+		cliente.setCnpj(clienteForm.getCnpj());
+		
+		return cliente;
+		
+	}
+	
+	public static void deletar(Integer id) {
+		Iterator<Fornecedor> iterator = fornecedores.iterator();
+        while (iterator.hasNext()) {
+        	Fornecedor objeto = iterator.next();
+            if (objeto.getId() == id) {
+                iterator.remove();
+            }
+        }
+		
 	}
 
 	

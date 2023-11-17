@@ -1,6 +1,7 @@
 package com.fatec.Vendas.models;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Produto {
@@ -14,12 +15,43 @@ public class Produto {
 		produtos.add(produto);
 		return produto;
 	}
+	
+	public static Produto encontrarPorId(int idProcurado) {
+        for (Produto objeto : produtos) {
+            if (objeto.getId() == idProcurado) {
+                return objeto;
+            }
+        }
+        return null;
+	}
+	
 
 	
-	public Produto(String nome, Double valor, Integer idTipoProduto) {
+	public static Produto atualizar(int idProcurado, Produto clienteForm) {
+		Produto cliente = Produto.encontrarPorId(idProcurado);
+		
+		cliente.setNome(clienteForm.getNome());
+		cliente.setValor(clienteForm.getValor());
+		
+		return cliente;
+		
+	}
+	
+	public static void deletar(Integer id) {
+		Iterator<Produto> iterator = produtos.iterator();
+        while (iterator.hasNext()) {
+            Produto objeto = iterator.next();
+            if (objeto.getId() == id) {
+                iterator.remove();
+            }
+        }
+		
+	}
+
+	
+	public Produto(String nome, Double valor) {
 		this.nome = nome;
 		this.valor = valor;
-		this.idTipoProduto = idTipoProduto;
 	}
 	
 	public Produto() {}
@@ -30,8 +62,7 @@ public class Produto {
 	private String nome;
 	
 	private Double valor;
-	
-	private Integer idTipoProduto;
+
 
 	public Integer getId() {
 		return id;
@@ -57,13 +88,6 @@ public class Produto {
 		this.valor = valor;
 	}
 
-	public Integer getIdTipoProduto() {
-		return idTipoProduto;
-	}
-
-	public void setIdTipoProduto(Integer idTipoProduto) {
-		this.idTipoProduto = idTipoProduto;
-	}
 
 	
 	
