@@ -1,51 +1,39 @@
-# Projeto 3: 1º semestre de 2022
- 
- 
- ## Parceiro Acadêmico
-MidAll</br>
+# Projeto I - Assistente Ibet
 
-![image](https://static.wixstatic.com/media/456d95_d8bfdcb4942b46c69950e9616742df4e~mv2.png/v1/fill/w_312,h_248,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo%20MidAll.png)
-##### *Figura 01. Fonte(www.midall.com.br)*
+## Parceiro Acadêmico
 
-A MidAll é uma empresa de serviços e consultoria em TI, com sede no Parque Tecnológico em São José dos Campos. Desenvolve soluções de data driven, transformação digital, agilidade e eficiência e governança e segurança.
-
+![image](https://sjc.fatec.sp.gov.br/static/media/logo.b8e0d5a7.png)
+##### *Figura 01. Fonte(https://sjc.fatec.sp.gov.br/)*
 
 ### Visão do Projeto
 
-Criação de um motor de promoções em um Ecommerce, onde a criação, edição e exclusão de promoções possam ser feitas de forma ágil e intuitiva. Com requisitos funcionais:
-* Interface de cadastro de produtos e promoções;
-* Edição de produtos;
-* Carrinho de compras;
-* Criação de promoções;
-* Categoria de promoções;
-* Listagem de produtos e promoções.
+A assistente virtual Ibet foi criada para oferecer aos usuários uma forma eficiente de acessar informações sobre esportes. Essa ferramenta conta com diversas funcionalidades que melhoram a experiência do usuário. Entre as principais características da Ibet, destacam-se:
 
+<b> Configuração de Alarmes para Jogos: </b>  Os usuários podem programar alarmes para serem notificados sobre jogos específicos, garantindo que estejam sempre atualizados sobre as partidas que mais interessam.
 
-Dessa forma, foi desenvolvido o PromoAll
+<b> Placares em Tempo Real: </b> A Ibet fornece placares atualizados em tempo real para jogos em andamento, permitindo que os usuários acompanhem os resultados instantaneamente, sem atrasos.
 
-<img src ="https://github.com/Doc-Docker/APIMidAll/blob/main/Images/logo2promoall.png" width="300" height="300"/>
+<b> Acesso a Jogos Anteriores: </b> Além de informações sobre partidas atuais, a Ibet também oferece detalhes sobre jogos passados, permitindo que os usuários revivam momentos memoráveis do esporte.
 
-##### *Figura 02. Fonte(www.github.com/Doc-Docker/APIMidAll)*
+<b> Vídeos e Conteúdo Relacionado: </b> A assistente disponibiliza acesso a vídeos e conteúdos esportivos, permitindo que os usuários assistam a momentos emocionantes, entrevistas e análises.
+
+<b> Interação por Comando de Voz: </b> Um dos grandes diferenciais da Ibet é a possibilidade de interação por meio de comandos de voz. Assim, os usuários podem obter todas as informações necessárias sem precisar digitar ou clicar, tornando a experiência mais conveniente e intuitiva.
+
+A Ibet foi projetada para fornecer informações de forma interativa, oferecendo aos usuários uma rica experiência no universo esportivo, sem os incômodos das interações tradicionais. Com sua funcionalidade de comando de voz, a assistente visa tornar a busca por informações esportivas mais prática e acessível.
 
 ### Tecnologias utilizadas:
 
 <div style="display: inline_block"><br> 
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" width="100" height="100" />
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg"  width="100" height="100" />
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg" width="100" height="100" />
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original-wordmark.svg" width="100" height="100"  />
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" width="100" height="100" />
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original-wordmark.svg" width="100" height="100" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="100" height="100"/>  
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" width="100" height="100"/>        
 </div>
 
 </br>
 
-Para o front-end foi utilizado o Angular que é uma plataforma baseada em Typescript, para criação das telas de interação com o cliente, e para realizar as requisições para a API que foi desenvolvida. O Java com o framework Spring foi utilizado para criação da API de backend, com a criação das rotas HTTP, conexão com o banco de dados, tratamento de erros e aplicação das regras de negócio. Como banco de dados, foi utilizado o H2 que é um sistema de gerenciamento de banco de dados relacional em memória
-         
          
 ### Contribuições pessoais:
 
-Desenvolvimento no front-end, utilizando o Angular, dentro desse desenvolvimento tive vários desafios na criação de telas, como:
+Desempenhei um papel crucial na implementação da tela para o usuário ,  
 * Criação da tela home; </br>
    Desenvolvi a tela inicial da aplicação, utilizando o bootstrap para estilização da página, criação do componente home em TypeScript 
 * Criação da tela de listagem de produtos</br>
