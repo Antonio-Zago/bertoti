@@ -1,281 +1,277 @@
-# Projeto I - Assistente Ibet
+## Projeto I - Assistente Ibet
 
-## Parceiro Acadêmico
+<details>
+  
+<summary>
+         Mais Detalhes do Projeto I
+</summary>
 
-![image](https://sjc.fatec.sp.gov.br/static/media/logo.b8e0d5a7.png)
-##### *Figura 01. Fonte(https://sjc.fatec.sp.gov.br/)*
+# Ibet - Assistente Virtual
+
+<br>
+     
+<img src ="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2012/05/Logo-Fatec-1200x800-1.jpg" width="200" height="200"/>
+
+##### *Figura 01. Logo Fatec - Profº Jassen Vidal*
+
+   A FATEC (Faculdade de Tecnologia do Estado de São Paulo) é uma instituição pública estadual vinculada à Secretaria de Desenvolvimento Econômico do Estado de São Paulo. Criada com o objetivo de oferecer formação superior tecnológica de qualidade, a FATEC busca atender às demandas do mercado de trabalho e do desenvolvimento regional, oferecendo cursos voltados para a área de tecnologia, inovação e desenvolvimento.
+
+![image](https://github.com/criskurim/CodeYCode/blob/main/Imagens/logo-removebg-preview.png)
+
+##### *Figura 02. Logo do Projeto Ibet Assistente*
 
 ### Visão do Projeto
 
-A assistente virtual Ibet foi criada para oferecer aos usuários uma forma eficiente de acessar informações sobre esportes. Essa ferramenta conta com diversas funcionalidades que melhoram a experiência do usuário. Entre as principais características da Ibet, destacam-se:
+   A assistente virtual Ibet foi criada para oferecer aos usuários uma forma prática e eficiente de acessar informações sobre esportes. Ela disponibiliza uma série de recursos pensados para melhorar a experiência do usuário. Entre as funcionalidades oferecidas pela Ibet estão:
 
-<b> Configuração de Alarmes para Jogos: </b>  Os usuários podem programar alarmes para serem notificados sobre jogos específicos, garantindo que estejam sempre atualizados sobre as partidas que mais interessam.
+   <strong>Configuração de Alarmes para Jogos:</strong> A assistente permite que os usuários definam alarmes para serem alertados sobre jogos específicos, garantindo que eles fiquem atualizados em tempo real sobre as partidas de seu interesse.
 
-<b> Placares em Tempo Real: </b> A Ibet fornece placares atualizados em tempo real para jogos em andamento, permitindo que os usuários acompanhem os resultados instantaneamente, sem atrasos.
+   <strong>Placar em Tempo Real:</strong> A Ibet apresenta placares atualizados ao vivo, permitindo que os usuários acompanhem os resultados das partidas enquanto acontecem, sem qualquer atraso.
+   
+   <strong>Acesso a Jogos Anteriores:</strong> Além de informações sobre eventos atuais, a Ibet também disponibiliza dados de jogos passados, oferecendo aos usuários a oportunidade de reviver momentos marcantes do esporte.
 
-<b> Acesso a Jogos Anteriores: </b> Além de informações sobre partidas atuais, a Ibet também oferece detalhes sobre jogos passados, permitindo que os usuários revivam momentos memoráveis do esporte.
+   <strong>Vídeos e Conteúdo Relacionado:</strong> A ferramenta oferece uma variedade de vídeos e outros conteúdos sobre esportes, como entrevistas, resumos de jogos e análises, para que os usuários possam se aprofundar ainda mais nos acontecimentos esportivos.
+   
+   <strong>Interação por Comando de Voz:</strong> Um dos maiores diferenciais da Ibet é a possibilidade de interação por meio de comandos de voz. Isso permite que os usuários obtenham todas as informações desejadas sem a necessidade de digitar ou clicar, tornando a experiência mais prática e intuitiva.
 
-<b> Vídeos e Conteúdo Relacionado: </b> A assistente disponibiliza acesso a vídeos e conteúdos esportivos, permitindo que os usuários assistam a momentos emocionantes, entrevistas e análises.
+Link do repositório do projeto: [Repositório](https://github.com/AndrewAugusto/Ibet_Assistente)
 
-<b> Interação por Comando de Voz: </b> Um dos grandes diferenciais da Ibet é a possibilidade de interação por meio de comandos de voz. Assim, os usuários podem obter todas as informações necessárias sem precisar digitar ou clicar, tornando a experiência mais conveniente e intuitiva.
+### Tecnologias adotadas no Projeto
 
-A Ibet foi projetada para fornecer informações de forma interativa, oferecendo aos usuários uma rica experiência no universo esportivo, sem os incômodos das interações tradicionais. Com sua funcionalidade de comando de voz, a assistente visa tornar a busca por informações esportivas mais prática e acessível.
-
-### Tecnologias utilizadas:
-
-<div style="display: inline_block"><br> 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="100" height="100"/>  
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" width="100" height="100"/>        
+<div style="text-align: center;">
+  <div style="margin-top: 10px; font-weight: bold;">BackEnd</div>
+  <div style="display: inline_block">
+    <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" width="85" height="85" />
+  </div>
+</div>
+<div style="text-align: center;">
+  <div style="margin-top: 10px; font-weight: bold;">Banco de Dados</div>
+  <div style="display: inline_block">
+    <img src="https://github.com/devicons/devicon/blob/master/icons/sqlite/sqlite-original.svg" width="85" height="85" />
+  </div>
 </div>
 
-</br>
-
-         
-### Contribuições pessoais:
-
-Desempenhei um papel crucial na implementação da tela para o usuário ,  
-* Criação da tela home; </br>
-   Desenvolvi a tela inicial da aplicação, utilizando o bootstrap para estilização da página, criação do componente home em TypeScript 
-* Criação da tela de listagem de produtos</br>
-   Desenvolvimento da tela com uma tabela para exibição dos dados adquiridos do banco de dados, criação da classe de services para fazer a conexão com o banco de dados e executar a requisição de getAll de produtos, utilizando api httpClient do angular
+## Iniciativas Implementadas:
+  Participei ativamente do processo de criação da tela inicial da aplicação, contribuindo para o desenvolvimento de uma interface intuitiva e funcional.
+  Durante o processo, trabalhei na definição da organização dos elementos da tela, como botões, menus e informações chave, buscando sempre otimizar o fluxo de navegação e facilitar o acesso às funcionalidades principais. Também estive envolvido na escolha das cores, fontes e outros detalhes visuais, de forma a garantir uma identidade visual coesa e que estivesse alinhada com o propósito da aplicação.
   
-   <details>
-     <summary>Código lista de produtos html</summary>
-       
+<details open><summary>Informações sobre o desenvolvimento da tela de login</summary>
+ 
+   1. Código da tela de login
+     
+   ```python
+   
+   class sm(ScreenManager):
+    def MudarPagina2(self):
+        self.current = 'p2'
+        self.nome = self.get_screen('pinicial').ids.nome.text
+        self.email = self.get_screen('pinicial').ids.email.text
+        self.get_screen('p2').ids.nome2.text = f'Olá {self.nome}, seu email: {self.email}'
         
-        <table class="table table-condensed table-hover">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let product of products">
-                        <td>{{ product.id }}</td>
-                        <td>{{ product.name }}</td>
-                        <td>{{ product.price }}</td>
-                        <td>{{ product.description }}</td>
+ 
+    def MudarPaginaInicial(self):
+        self.current = 'pinicial'
+class PaginaInicial(Screen):
+    pass
+class Pagina2(Screen):
+    pass
+class Tarefa(BoxLayout):
+    def __init__(self,text='',**kwargs):
+        super().__init__(**kwargs)
+        self.ids.nome2.text = text
+class teste(App):
+    def build(self):
+        return sm()
+if __name__ == "__main__":
+    teste().run()  
+	    
+   ```
+     
+   A classe principal, chamada sm, herda de ScreenManager, e é responsável pela troca entre as telas. Dentro dessa classe, há dois métodos principais. O método MudarPagina2 é usado para mudar para a segunda tela, p2. Além de mudar para essa tela, ele também coleta os dados inseridos na Tela Inicial (nome e email), que são então exibidos na Página 2. A linha de código que faz isso é responsável por atualizar um campo de texto específico, exibindo a mensagem "Olá [nome], seu email: [email]". O outro método, MudarPaginaInicial, muda a tela de volta para a Tela Inicial.
 
-                        <td>
-                            <select class="form-control" type="number" [(ngModel)]="product.quantidade">
-                                <option [value]="n" *ngFor="let n of lista" >
-                                  <p>{{n}}</p>
-                                </option>
-                            </select>
-                        </td>
+<img src="https://raw.githubusercontent.com/AndrewAugusto/Ibet_Assistente/7b919f2042e732cd0c0da1f7be25ed1b62b513f2/Tela%20inicial.gif" width="500" height="300" />
 
-                        <td>
+##### *Figura 03. Gif da tela inicial*
 
-                            <button class="btn btn-primary" routerLink="/products-form/{{ product.id }}">
-                                <i class="fa fa-edit"></i>
-                            </button>
+</details> 
 
-                           
-
-                        </td>
-
-                        <td>
-                            <button  class="btn btn-success" (click)="addProduct(product)" >
-                                <i class="fa fa-plus"></i>
-                            </button>
-                        </td>
-
-                        <td>
-                            <button  class="btn btn-danger" (click)="preDelete(product)"
-                                    data-toggle="modal" data-target="#deleteModal" >
-                                <i class="fa fa-trash"></i>
-                            </button>
-                        </td>
+ <details open><summary>Informações sobre o desenvolvimento do código para exibir agenda de jogos</summary>
+  
+   1. Trecho do código responsável por chamar o método para exibir a agenda e permitir ao usuário excluir ou inserir novas informações
+     
+   ```python
+   
+           
+    elif encontrar_comando('agenda', frase):
+        bet_pergunta = ("Aqui está sua agenda completa: ")
+        print(bet_pergunta)
+        sintese_voz(bet_pergunta)
+        agenda_c_bd.exibir_agenda()
+     while True:
+            bet_pergunta = ("O que deseja realizar com a agenda: ")
+            print(bet_pergunta)
+            sintese_voz(bet_pergunta)
+            termo_busca = ouvir_microfone()
+            if(encontrar_comando('inserir', termo_busca)):
+                bet_pergunta = ("Digite a data do jogo:  ")
+                print(bet_pergunta)
+                sintese_voz(bet_pergunta)
+                data = str(input('Data (dd/mm/aaaa): '))
+                    
+                bet_pergunta = ("Digite o horario do jogo? ")
+                print(bet_pergunta)
+                sintese_voz(bet_pergunta)
+                horario = str(input('Horario (hh:mm): '))
+                bet_pergunta = ("Fale o nome do primeiro time que irá jogar:  ")
+                print(bet_pergunta)
+                sintese_voz(bet_pergunta)
+                time1 = ouvir_microfone()
+                bet_pergunta = ("Fale o nome do segundo time que irá jogar:  ")
+                print(bet_pergunta)
+                sintese_voz(bet_pergunta)
+                time2 = ouvir_microfone()
+                print(f'{time1} x {time2}')
+                print(f'{data} --- {horario}')
+                while True:
+                    bet_pergunta = ("Deseja inserir esse jogo na agenda? ")
+                    print(bet_pergunta)
+                    sintese_voz(bet_pergunta)
+                    resposta = ouvir_microfone()
+                    if(encontrar_comando('sim', resposta)):
+                        agenda_c_bd.inserir_na_agenda(time1, time2, data, horario)
+                        break
+                    elif(encontrar_comando('não', resposta)):
+                        break
+                    else:
+                        continue
                 
-                    </tr>
-                </tbody>
-            </table> 
-    </details>
+                break
+            elif(encontrar_comando('deletar', termo_busca)):
+                bet_pergunta = ("Digite o código do jogo para deletar: ")
+                print(bet_pergunta)
+                sintese_voz(bet_pergunta)
+                cod_deletar = str(input('Código: '))
+                agenda_c_bd.deletar_na_agenda(cod_deletar)
+                
+                break
+            else:
+                continue
     
-    * Tabela feita em html listando através de um ngFor do Angular os produtos que estão na lista de produtos que foram inseridas pela requisição get em produtos
-     </br>
-    <details >
-     <summary>Código da função que faz a requisição na classe service</summary>
-          
-          
-          
-          ngOnInit(): void {
-             this.service
-               .getProducts()
-               .subscribe( res => this.products = res )
-           }
+   ```
+
+2. Trecho do código responsável por exibir, inserir e deletar da agenda de jogos do usuário
      
+   ```python
+   
+
+         def exibir_agenda():
+             banco = sqlite3.connect('teste_agenda.db')
+             cursor = banco.cursor()
+             cursor.execute("SELECT time, data from agenda1")
+             for i in cursor:
+                 print (i)
+             banco.close()
+         def inserir_na_agenda(time, data):
+             try:
+                 banco = sqlite3.connect('teste_agenda.db')
+                 cursor = banco.cursor()
+                 cursor.execute("INSERT INTO agenda1 VALUES('"+time+"', '"+data+"')")
+                 banco.commit()
+                 banco.close()
+                 print("Agenda atualizada")
+             except sqlite3.Error as erro:
+                 print(f'Erro ao inserir: {erro}')
+             print()
+         def deletar_na_agenda(time):
+             try:
+                 banco = sqlite3.connect('teste_agenda.db')
+                 cursor = banco.cursor()
+                 cursor.execute("DELETE FROM agenda1 WHERE time = '"+time+"'")
+                 banco.commit()
+                 banco.close()
+                 print("Dados apagados com sucesso!")
+             except sqlite3.Error as erro:
+                 print(f'Erro ao excluir: {erro}')
+             print()
+         def atualizar_na_agenda(time, data):
+             banco = sqlite3.connect('teste_agenda.db')
+             cursor = banco.cursor()
+             cursor.execute("UPDATE agenda1 SET data = '"+data+"' WHERE time = '"+time+"'")
+             banco.commit()
+             banco.close()
+             print("Dados atualizados com sucesso")
+             print()
     
-            
-     </details>
-     
-     * Chamada do método de services para requisição get em produtos, retornando todos os produtos cadastrados no banco e inserindo em uma lista products
+   ```
+	
+   - Esse trecho de código é responsável por conectar no banco de dados e realizar a consulta, inserção e exclusão de dados da agenda do usuário
+</details> 
 
+## Aprendizados Efetivos
 
-* Criação das telas de cadastro de produtos; </br>
-   Desenvolvimento do formulário de cadastro de produtos, criação da classe de services para envio da requisição POST com objeto do tipo produto.
-   
-   <details>
-      <summary>Código da função na classe service para criação e atualização de produtos </summary>
-          
-          * Método para envio de uma requisição POST para cadastrar produtos
-          
-          onSubmit(){
+<h4><strong>Início com Python:</strong></h4>
+<pre>
+   Iniciei minha jornada com a linguagem de programação Python, abrindo portas para novas possibilidades.
+</pre>
 
-           if(this.id){
-             this.service.update(this.id, this.product)
-             .subscribe( res => {
-               this.success = true;
-               this.errors = null;
-             }
-             )
-           }
-           else{
+<h4><strong>Compreensão Profunda do Scrum:</strong></h4>
+<pre>
+   Adquiri uma compreensão profunda da metodologia ágil Scrum, aplicando seus princípios de forma prática.
+</pre>
 
-             this.service
-               .insert(this.product)
-               .subscribe( res =>{
-                 this.success = true;
-                 this.errors = null;
+<h4><strong>Adoção do Paradigma Imperativo:</strong></h4>
+<pre>
+   Optei por adotar o paradigma de programação imperativo para construir meu projeto, utilizando uma abordagem estruturada.
+</pre>
 
-               }, errorRes =>{
-                 this.success = false;
-                 this.errors = errorRes.error.errors
+<h4><strong>Base Sólida em Lógica de Programação:</strong></h4>
+<pre>
+   Desenvolvi uma base sólida em lógica de programação, capacitando-me para resolver desafios computacionais de maneira eficaz.
+</pre>
 
-               }
+<h4><strong>Introdução e Uso de Estruturas de Dados:</strong></h4>
+<pre>
+   Introduzi e utilizei com sucesso as primeiras estruturas de dados em meu projeto, explorando as capacidades da linguagem Python.
+</pre>
 
-               )
-           }
+<h4><strong>Evolução das Habilidades de Comunicação:</strong></h4>
+<pre>
+   Minhas habilidades de comunicação estão em constante evolução, contribuindo para uma melhor interação com colegas.
+</pre>
 
+<h4><strong>Desenvolvimento Backend com Python:</strong></h4>
+<pre>
+   Desenvolvimento do backend com Python, criando aplicações robustas.
+</pre>
 
-         }
-   </details>
-   
-   * Função que chama a requisição POST de produto, para inserção através do método na classe services
-   
-* Criação da tela de carrinho de compras;</br>
-   Desenvolvimento de uma tela para mostrar todos os produtos selecionados pelo usuário no sistema
-   
-   <details>
-      <summary>Código TS para exibição no carrinho de compras </summary>
-          
-          
-          
-          ngOnInit(): void {
-            this.products = [];
-            this.finalPrice = 0;
-            this.product;
-            this.discount;
-            this.categoria=0;
-            this.noDiscount = 0;
-            this.lista = [];
-            this.teste = [];
-            Cart.products.forEach(element => {
-              this.product = element;
-              this.id  = element.id;
-              this.quantidade = element.quantidade;
-              this.categoria =  element.id;
-              this.products.push(element);
+<h4><strong>Criação de APIs:</strong></h4>
+<pre>
+   Criação de APIs para fornecer serviços e funcionalidades.
+</pre>
 
-                this.total = this.noDiscount += (element.price  * element.quantidade);
+<h4><strong>Versionamento de Código com Git:</strong></h4>
+<pre>
+   Domínio do versionamento de código com o uso do Git.
+</pre>
 
-                this.service.getDiscount(this.id, this.quantidade, this.total, this.categoria).subscribe(
-                    response =>
-                    { const product : Product = new Product();
-                      this.discount = response;
-                      this.product.discount = this.discount
-                      this.finalPrice = this.finalPrice += (element.price * element.quantidade)-(this.discount)
-                      console.log("teste", this.categoria)
-                    errorResponse => console.log(errorResponse)
-                })
-            });
+<h4><strong>Projetar Arquitetura de Sistemas:</strong></h4>
+<pre>
+   Capacidade de projetar a arquitetura de sistemas alinhada aos requisitos funcionais e não funcionais.
+</pre>
 
-          }
+<h4><strong>Desenvolvimento Integrado com Bancos de Dados Relacionais:</strong></h4>
+<pre>
+   Experiência no desenvolvimento integrado com bancos de dados relacionais.
+</pre>
 
-   </details>
-   
-    * Carrinho de compras em html para listagem dos produtos
-   
-   
-* Criação da função no carrinho de compras para aplicação das promoções; </br>
-    Desenvolvimento em TypeScript da função para aplicaçação dos descontos e desenvolvimento para visualização em html
-    <details>
-      <summary>Código html para exibição do valor do carrinho aplicado os descontos  </summary>
-            
-            
-            
-            <tr>
-                    <th>Total Price:</th>
-                    <th>{{ finalPrice }}</th>
-                    <th></th>
-                    <th></th>
-                   </tr>
-                   <tr>
-                     <th>Price Without Discount:</th>
-                     <th>{{ noDiscount }}</th>
-                     <th></th>
-                     <th></th>
-             </tr>
-   </details>
-   
-   * Aplicando descontos no carrinho de compras e armazenando em uma variavel finalPrice 
-   
-* Criação do botão para adicionar produto no carrinho </br>
-    Desenvolvimento do botão para adicionar o produto selecionado pelo cliente no carrinho de compras
-    <details>
-      <summary>Código html do botão  </summary>
-           
-           
-           
-           <button  class="btn btn-success" (click)="addProduct(product)" >
-              <i class="fa fa-plus"></i>
-           </button>
-   </details>
-   
-   <details>
-      <summary>Código TS para adição no carrinho  </summary>
-      
-           addProduct(product : Product){
+<br>
 
-             if(product.quantidade != null){ 
-               Cart.products.push(product);
-             }
+<details close></summary></summary>
 
-             this.ngOnInit();
-           }
-   </details>
-   
-   * Adicionando produto na lista que representa o carrinho de compras
-   
+Clique [aqui](https://github.com/AndrewAugusto/Ibet_Assistente) para mais detalhes do Projeto.
 
+</details>
 
-</br>
-Além disso, tive o desafio de criar as requisições http de acordo com que foi desenvolvido no back end, consiliando o objeto json que seria enviado através das requisições POST e PUT, e adaptando no layout os objetos recebidos através da requisição GET, além disso, enviar as informações corretas para a requisição DELETE.
+<br>
 
-### Aprendizados efetivos HS:
-
-  Dentro do desenvolvimento do sistema de E-commerce para a MidAll obtive diversos aprendizados novos, e aprofundei em outros, foram eles:
-  
-* Desenvolvimento de telas com Angular; </br>
-   Para criação das telas foi utilizado o html e css, além do bootstrap como framework para o frontend. 
-* Desenvolvimento com a linguagem TypeScript; </br>
-   Foi necessário aprender sobre a linguagem TypeScript para criação dos arquivos service para efetivar as requisições HTTP
-* Protocolo HTTP;
-* Requisições GET, POST, PUT e DELETE; </br>
-   Aprendi mais sobre essas requisições e como efetuar elas utilizando o Angular.
-* Criação de um objeto JSON para envio nas requisições;
-* Aprendi como fazer requisições no backend utilizando a api httpClient do Angular;
-* Aprofundamento em aprendizados de banco de dados, DML, DQL, criação arquitetura de tabelas ;   
-* Criação de um projeto em Vue; </br>
-   Foi necessário aprender a estrutura de pastas de um projeto em Angular.</br>
-   
-
-  Os conhecimentos adquiridos em aula foram essencias para desenvolvimento desse projeto, aplicamos os conhecimentos aprendidos para seguir os padrões de arquitetura, torná-lo componentizável e seguindo modos de construção comuns aos utilizados no mercado e comunidade. Criação do banco de dados utilizado na aplicação, seguindo o padrão de chaves primaria e estrangeiras nas tabelas, criação do modelo e entidades do banco. Criação do padrão de pastas tanto no frontend como no backend. Aprendizados dos frameworks utilizados, vue e spring.
-  
-  
+</details>
