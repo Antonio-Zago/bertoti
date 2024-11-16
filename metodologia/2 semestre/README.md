@@ -1,275 +1,207 @@
-## Projeto I - Assistente Ibet
+## Projeto II - Vigilant
 
 <details>
   
 <summary>
-         Mais Detalhes do Projeto I
+	Mais Detalhes do Projeto II
 </summary>
 
-# Ibet - Assistente Virtual
+# Vigilant - (Sistema de Gerenciamento de Banco de Dados)
 
-<br>
-     
-<img src ="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2012/05/Logo-Fatec-1200x800-1.jpg" width="200" height="200"/>
+### Parceiro Acadêmico
+	
+<br/>
+	
+<img src="https://github.com/Antonio-Zago/bertoti/blob/main/metodologia/imgs/necto.png"/>
 
-##### *Figura 01. Logo Fatec - Profº Jassen Vidal*
+##### *Figura 01. Logo Necto System Fonte([Necto](https://necto.com.br))*
 
-   A FATEC (Faculdade de Tecnologia do Estado de São Paulo) é uma instituição pública estadual vinculada à Secretaria de Desenvolvimento Econômico do Estado de São Paulo. Criada com o objetivo de oferecer formação superior tecnológica de qualidade, a FATEC busca atender às demandas do mercado de trabalho e do desenvolvimento regional, oferecendo cursos voltados para a área de tecnologia, inovação e desenvolvimento.
-
-![image](https://github.com/criskurim/CodeYCode/blob/main/Imagens/logo-removebg-preview.png)
-
-##### *Figura 02. Logo do Projeto Ibet Assistente*
+A empresa Necto System situada no Parque Tecnológico de São José dos Campos, propôs o seguinte desafio baseado na metodologia ágil Scrum.
 
 ### Visão do Projeto
 
-   A assistente virtual Ibet foi criada para oferecer aos usuários uma forma prática e eficiente de acessar informações sobre esportes. Ela disponibiliza uma série de recursos pensados para melhorar a experiência do usuário. Entre as funcionalidades oferecidas pela Ibet estão:
+   Este projeto propôs a criação de uma integração para coleta de dados diretamente dos servidores, com o objetivo de construir uma série histórica de informações. A ideia por trás dessa abordagem era desenvolver uma aplicação capaz de realizar a coleta regular de métricas de um ou mais Sistemas Gerenciadores de Banco de Dados (SGBDs) remotos. A ferramenta foi projetada para fornecer dados essenciais que ajudem os usuários a tomar decisões mais informadas sobre a manutenção, balanceamento, escalabilidade e possíveis melhorias em seus bancos de dados e na infraestrutura dos servidores.
 
-   <strong>Configuração de Alarmes para Jogos:</strong> A assistente permite que os usuários definam alarmes para serem alertados sobre jogos específicos, garantindo que eles fiquem atualizados em tempo real sobre as partidas de seu interesse.
+Com essa integração, o objetivo é permitir que os usuários monitorem o desempenho de seus sistemas em tempo real, identifiquem tendências ao longo do tempo e adotem uma postura proativa para otimizar e manter a estabilidade das operações. Ao fornecer uma visão completa das métricas do sistema, a aplicação possibilita decisões baseadas em dados sobre ajustes necessários, seja para melhorar a eficiência dos bancos de dados, realizar balanceamento de carga ou até mesmo escalar a infraestrutura para atender à demanda crescente.
 
-   <strong>Placar em Tempo Real:</strong> A Ibet apresenta placares atualizados ao vivo, permitindo que os usuários acompanhem os resultados das partidas enquanto acontecem, sem qualquer atraso.
-   
-   <strong>Acesso a Jogos Anteriores:</strong> Além de informações sobre eventos atuais, a Ibet também disponibiliza dados de jogos passados, oferecendo aos usuários a oportunidade de reviver momentos marcantes do esporte.
+Essa iniciativa reflete uma compreensão aprofundada das necessidades de gestão de banco de dados e infraestrutura, evidenciando a capacidade de criar soluções práticas que otimizem a operação dos sistemas e garantam sua confiabilidade e desempenho a longo prazo.
 
-   <strong>Vídeos e Conteúdo Relacionado:</strong> A ferramenta oferece uma variedade de vídeos e outros conteúdos sobre esportes, como entrevistas, resumos de jogos e análises, para que os usuários possam se aprofundar ainda mais nos acontecimentos esportivos.
-   
-   <strong>Interação por Comando de Voz:</strong> Um dos maiores diferenciais da Ibet é a possibilidade de interação por meio de comandos de voz. Isso permite que os usuários obtenham todas as informações desejadas sem a necessidade de digitar ou clicar, tornando a experiência mais prática e intuitiva.
+Link do repositório do projeto: [Repositório](https://github.com/apibanco/Vigilant)
 
-Link do repositório do projeto: [Repositório](https://github.com/AndrewAugusto/Ibet_Assistente)
-
-### Tecnologias adotadas no Projeto
+### Tecnologias adotadas na solução
 
 <div style="text-align: center;">
   <div style="margin-top: 10px; font-weight: bold;">BackEnd</div>
   <div style="display: inline_block">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" width="85" height="85" />
+    <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original-wordmark.svg" width="85" height="85" />
+    <img src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original-wordmark.svg" width="85" height="85" />
+  </div>
+</div>
+<div style="text-align: center;">
+  <div style="margin-top: 10px; font-weight: bold;">FrontEnd</div>
+  <div style="display: inline_block">
+    <img src="https://github.com/devicons/devicon/blob/master/icons/angularjs/angularjs-original-wordmark.svg" width="85" height="85" />
+    <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original-wordmark.svg" width="85" height="85" />  
+    <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original-wordmark.svg" width="85" height="85" />
   </div>
 </div>
 <div style="text-align: center;">
   <div style="margin-top: 10px; font-weight: bold;">Banco de Dados</div>
   <div style="display: inline_block">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/sqlite/sqlite-original.svg" width="85" height="85" />
+    <img src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original-wordmark.svg" width="85" height="85" />
   </div>
 </div>
 
-## Iniciativas Implementadas:
-  Participei ativamente do processo de criação da tela inicial da aplicação, contribuindo para o desenvolvimento de uma interface intuitiva e funcional.
-  Durante o processo, trabalhei na definição da organização dos elementos da tela, como botões, menus e informações chave, buscando sempre otimizar o fluxo de navegação e facilitar o acesso às funcionalidades principais. Também estive envolvido na escolha das cores, fontes e outros detalhes visuais, de forma a garantir uma identidade visual coesa e que estivesse alinhada com o propósito da aplicação.
-  
-<details open><summary>Informações sobre o desenvolvimento da tela de login</summary>
- 
-   1. Código da tela de login
-     
-   ```python
-   
-   class sm(ScreenManager):
-    def MudarPagina2(self):
-        self.current = 'p2'
-        self.nome = self.get_screen('pinicial').ids.nome.text
-        self.email = self.get_screen('pinicial').ids.email.text
-        self.get_screen('p2').ids.nome2.text = f'Olá {self.nome}, seu email: {self.email}'
-        
- 
-    def MudarPaginaInicial(self):
-        self.current = 'pinicial'
-class PaginaInicial(Screen):
-    pass
-class Pagina2(Screen):
-    pass
-class Tarefa(BoxLayout):
-    def __init__(self,text='',**kwargs):
-        super().__init__(**kwargs)
-        self.ids.nome2.text = text
-class teste(App):
-    def build(self):
-        return sm()
-if __name__ == "__main__":
-    teste().run()  
-	    
-   ```
-     
-   A classe principal, chamada sm, herda de ScreenManager, e é responsável pela troca entre as telas. Dentro dessa classe, há dois métodos principais. O método MudarPagina2 é usado para mudar para a segunda tela, p2. Além de mudar para essa tela, ele também coleta os dados inseridos na Tela Inicial (nome e email), que são então exibidos na Página 2. A linha de código que faz isso é responsável por atualizar um campo de texto específico, exibindo a mensagem "Olá [nome], seu email: [email]". O outro método, MudarPaginaInicial, muda a tela de volta para a Tela Inicial.
+## Informações sobre a Lógica do Sistema:
 
-<img src="https://raw.githubusercontent.com/AndrewAugusto/Ibet_Assistente/7b919f2042e732cd0c0da1f7be25ed1b62b513f2/Tela%20inicial.gif" width="500" height="300" />
+  Assumi a responsabilidade de implementar a lógica que possibilitou a integração com o banco de dados, permitindo a coleta periódica de parametrizações. Além disso, fui encarregado de desenvolver as consultas (queries) necessárias para extrair os dados e criar procedimentos armazenados (procedures) para garantir a execução eficiente dessas operações.
 
-##### *Figura 03. Gif da tela inicial*
+Essa tarefa exigiu um conhecimento aprofundado das estruturas de banco de dados e suas particularidades, além de habilidades no design de consultas, otimização de desempenho e na criação de procedimentos para automatizar processos complexos. Ao implementar essa lógica, consegui garantir que a integração fosse capaz de extrair as informações necessárias de forma precisa e eficiente, assegurando a coleta confiável das parametrizações.
 
-</details> 
+Minha contribuição na criação de consultas e procedures reforçou minha capacidade de traduzir requisitos de negócios em soluções práticas no ambiente de banco de dados. Além disso, evidenciou meu domínio de SQL e meu compromisso em desenvolver soluções robustas e eficazes, atendendo às necessidades tanto do projeto quanto da equipe.
 
- <details open><summary>Informações sobre o desenvolvimento do código para exibir agenda de jogos</summary>
-  
-   1. Trecho do código responsável por chamar o método para exibir a agenda e permitir ao usuário excluir ou inserir novas informações
-     
-   ```python
-   
-           
-    elif encontrar_comando('agenda', frase):
-        bet_pergunta = ("Aqui está sua agenda completa: ")
-        print(bet_pergunta)
-        sintese_voz(bet_pergunta)
-        agenda_c_bd.exibir_agenda()
-     while True:
-            bet_pergunta = ("O que deseja realizar com a agenda: ")
-            print(bet_pergunta)
-            sintese_voz(bet_pergunta)
-            termo_busca = ouvir_microfone()
-            if(encontrar_comando('inserir', termo_busca)):
-                bet_pergunta = ("Digite a data do jogo:  ")
-                print(bet_pergunta)
-                sintese_voz(bet_pergunta)
-                data = str(input('Data (dd/mm/aaaa): '))
-                    
-                bet_pergunta = ("Digite o horario do jogo? ")
-                print(bet_pergunta)
-                sintese_voz(bet_pergunta)
-                horario = str(input('Horario (hh:mm): '))
-                bet_pergunta = ("Fale o nome do primeiro time que irá jogar:  ")
-                print(bet_pergunta)
-                sintese_voz(bet_pergunta)
-                time1 = ouvir_microfone()
-                bet_pergunta = ("Fale o nome do segundo time que irá jogar:  ")
-                print(bet_pergunta)
-                sintese_voz(bet_pergunta)
-                time2 = ouvir_microfone()
-                print(f'{time1} x {time2}')
-                print(f'{data} --- {horario}')
-                while True:
-                    bet_pergunta = ("Deseja inserir esse jogo na agenda? ")
-                    print(bet_pergunta)
-                    sintese_voz(bet_pergunta)
-                    resposta = ouvir_microfone()
-                    if(encontrar_comando('sim', resposta)):
-                        agenda_c_bd.inserir_na_agenda(time1, time2, data, horario)
-                        break
-                    elif(encontrar_comando('não', resposta)):
-                        break
-                    else:
-                        continue
-                
-                break
-            elif(encontrar_comando('deletar', termo_busca)):
-                bet_pergunta = ("Digite o código do jogo para deletar: ")
-                print(bet_pergunta)
-                sintese_voz(bet_pergunta)
-                cod_deletar = str(input('Código: '))
-                agenda_c_bd.deletar_na_agenda(cod_deletar)
-                
-                break
-            else:
-                continue
+<details open><summary>Informações código Back-End</summary>
     
-   ```
-
-2. Trecho do código responsável por exibir, inserir e deletar da agenda de jogos do usuário
+   1. Algoritmo para conexão com o Banco de Dados (Postgress).
      
-   ```python
+   ```js
    
+	public conexao(){
+			url = "jdbc:postgresql://localhost:5432/teste";
+			usuario = "postgres";
+			senha = "toto185100";
 
-         def exibir_agenda():
-             banco = sqlite3.connect('teste_agenda.db')
-             cursor = banco.cursor()
-             cursor.execute("SELECT time, data from agenda1")
-             for i in cursor:
-                 print (i)
-             banco.close()
-         def inserir_na_agenda(time, data):
-             try:
-                 banco = sqlite3.connect('teste_agenda.db')
-                 cursor = banco.cursor()
-                 cursor.execute("INSERT INTO agenda1 VALUES('"+time+"', '"+data+"')")
-                 banco.commit()
-                 banco.close()
-                 print("Agenda atualizada")
-             except sqlite3.Error as erro:
-                 print(f'Erro ao inserir: {erro}')
-             print()
-         def deletar_na_agenda(time):
-             try:
-                 banco = sqlite3.connect('teste_agenda.db')
-                 cursor = banco.cursor()
-                 cursor.execute("DELETE FROM agenda1 WHERE time = '"+time+"'")
-                 banco.commit()
-                 banco.close()
-                 print("Dados apagados com sucesso!")
-             except sqlite3.Error as erro:
-                 print(f'Erro ao excluir: {erro}')
-             print()
-         def atualizar_na_agenda(time, data):
-             banco = sqlite3.connect('teste_agenda.db')
-             cursor = banco.cursor()
-             cursor.execute("UPDATE agenda1 SET data = '"+data+"' WHERE time = '"+time+"'")
-             banco.commit()
-             banco.close()
-             print("Dados atualizados com sucesso")
-             print()
-    
-   ```
+			try {
+				Class.forName("org.postgresql.Driver");
+				con = DriverManager.getConnection(url,usuario,senha);
+				System.out.println("Conexão realizada com sucesso!!!");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			ExibirTamanhoTabelas(con);
+	};
+
+	public static void ExibirTamanhoTabelas(Connection con) {
+		String sql = "SELECT 
+				esquema, 
+				tabela,
+				pg_size_pretty(pg_relation_size(esq_tab)) AS tamanho,
+				pg_size_pretty(pg_total_relation_size(esq_tab)) AS tamanho_total,
+			      FROM 
+				(SELECT 
+				    tablename AS tabela,
+				    schemaname AS esquema,
+				    schemaname||'.'||tablename AS esq_tab
+				FROM
+				    pg_catalog.pg_tables
+				WHERE 
+				    schemaname NOT IN ('pg_catalog', 'information_schema', 'pg_toast') ) AS x
+				ORDER BY 
+				    pg_total_relation_size(esq_tab) DESC; ";
+
+		try {
+			PreparedStatement pesquisa = con.prepareStatement(sql);
+			ResultSet result = pesquisa.executeQuery();
+			while(result.next()) {
+				System.out.println("NOME: " + result.getString("tabela"));
+				System.out.println("TAMANHO: "+result.getString("tamanho"));
+				System.out.println("TAMANHO TOTAL: " + result.getString("tamanho_total"));
+			}
+		} catch(Exception e) {
+		    e.printStackTrace();
+		}
+	}
 	
-   - Esse trecho de código é responsável por conectar no banco de dados e realizar a consulta, inserção e exclusão de dados da agenda do usuário
-</details> 
+   ```
+   
+   No primeiro trecho deste código acima, foram definidas as informações necessárias para a conexão com o banco de dados local. A variável "url" contém a URL de conexão com o banco, a porta padrão do PostgreSQL e o nome do banco de dados.
 
-## Aprendizados Efetivos
+Em seguida, dentro de um bloco try-catch, o código tenta estabelecer a conexão com o banco de dados. A linha Class.forName("org.postgresql.Driver") carrega dinamicamente o driver JDBC necessário para se comunicar com o PostgreSQL. Em seguida, DriverManager.getConnection(url,usuario,senha) estabelece a conexão com o banco de dados usando as informações fornecidas. Se a conexão for estabelecida com sucesso, a mensagem "Conexão realizada com sucesso!!!" é exibida. Caso ocorra algum erro durante a conexão, a exceção é capturada e o rastreamento de pilha do erro é impresso.
 
-<h4><strong>Início com Python:</strong></h4>
-<pre>
-   Iniciei minha jornada com a linguagem de programação Python, abrindo portas para novas possibilidades.
-</pre>
+Após a conexão ser estabelecida, há uma chamadas de método chamando "ExibirTamanhoTabelas". Esse método exibe o tamanho das tabelas do banco de dados através de um retorno de uma query consultando através da conexão realizada.
 
-<h4><strong>Compreensão Profunda do Scrum:</strong></h4>
-<pre>
-   Adquiri uma compreensão profunda da metodologia ágil Scrum, aplicando seus princípios de forma prática.
-</pre>
+</details>   
 
-<h4><strong>Adoção do Paradigma Imperativo:</strong></h4>
-<pre>
-   Optei por adotar o paradigma de programação imperativo para construir meu projeto, utilizando uma abordagem estruturada.
-</pre>
+- Auxiliei também a integração completa das chamadas de todos os métodos do Back-End. Durante esse processo, além de criar alguns métodos, desempenhei um papel fundamental na realização de testes para validar as requisições.
 
-<h4><strong>Base Sólida em Lógica de Programação:</strong></h4>
-<pre>
-   Desenvolvi uma base sólida em lógica de programação, capacitando-me para resolver desafios computacionais de maneira eficaz.
-</pre>
+  Essa etapa é de extrema importância, pois envolve garantir que cada funcionalidade do Back-End esteja operando de maneira correta e coesa. Ao criar e implementar esses métodos, pude contribuir para a construção de uma aplicação robusta e funcional. Os testes que conduzi permitiram identificar possíveis problemas e assegurar que as requisições feitas à API estivessem fornecendo os resultados esperados.
 
-<h4><strong>Introdução e Uso de Estruturas de Dados:</strong></h4>
-<pre>
-   Introduzi e utilizei com sucesso as primeiras estruturas de dados em meu projeto, explorando as capacidades da linguagem Python.
-</pre>
+  A abordagem sistemática e a atenção aos detalhes nos testes ilustram o compromisso em oferecer um produto final de alta qualidade, além de evidenciar minhas habilidades em depuração e solução de problemas.
 
-<h4><strong>Evolução das Habilidades de Comunicação:</strong></h4>
-<pre>
-   Minhas habilidades de comunicação estão em constante evolução, contribuindo para uma melhor interação com colegas.
-</pre>
+  <details open><summary>Detalhes da Interface do Usuário</summary>
+  
+   1. Trecho do algoritmo responsável por receber o retorno do back-end.
+     
+   ```js
+   
+        public class Principal {
 
-<h4><strong>Desenvolvimento Backend com Python:</strong></h4>
-<pre>
-   Desenvolvimento do backend com Python, criando aplicações robustas.
-</pre>
+		public static void main(String[] args) throws IOException {
+			LoginModel loginModel = LoginController.PreencherLogin();
+			Menu menu = new Menu(loginModel);
+			Properties prop = LoginController.getProp();
+			String openMenu = prop.getProperty("openMenu");
 
-<h4><strong>Criação de APIs:</strong></h4>
-<pre>
-   Criação de APIs para fornecer serviços e funcionalidades.
-</pre>
+			if (openMenu.equals("y")) {
+				menu.startmenu();
+			} else {
+				ImprimeMetricas imprimeMetricas = new ImprimeMetricas(loginModel);
+				imprimeMetricas.tamanhobancos();
+				imprimeMetricas.tamanhoTabelas();
+				imprimeMetricas.selectsChamadas1000x();
+				imprimeMetricas.SelectMaisDemoradas();
+				imprimeMetricas.selectsMaisDemoradasMedia();
+				imprimeMetricas.conflicts();
+			}
+		}
+	}
+	
+   ```
 
-<h4><strong>Versionamento de Código com Git:</strong></h4>
-<pre>
-   Domínio do versionamento de código com o uso do Git.
-</pre>
+O código é uma classe Java chamada "Principal".
+Na primeiro trecho do código, uma instância da classe "LoginModel" é criada chamada "loginModel", e o método estático "PreencherLogin()" da classe "LoginController" é chamado para preencher os dados do login.
+Em seguida, uma instância da classe "Menu" chamada "menu" é criada, passando o objeto "loginModel" como argumento para o construtor da classe "Menu".
+A próxima linha cria uma instância da classe "Properties" chamada "prop" e chama o método estático "getProp()" da classe "LoginController" para obter um objeto "Properties".
+Em seguida, a propriedade chamada "openMenu" é recuperada do objeto "Properties" e armazenada na variável "openMenu" como uma string.
+Em seguida, o código verifica se o valor da variável "openMenu" é igual a "y". Se for, o método "startmenu()" é chamado no objeto "menu". Caso contrário, uma instância da classe "ImprimeMetricas" chamada "imprimeMetricas" é criada, passando o objeto "loginModel" como argumento para o construtor. Em seguida, vários métodos são chamados nessa instância, como "tamanhobancos()", "tamanhoTabelas()", "selectsChamadas1000x()", "SelectMaisDemoradas()", "selectsMaisDemoradasMedia()" e "conflicts()". Esses métodos provavelmente realizam diferentes operações relacionadas a métricas e análises de um sistema.
 
-<h4><strong>Projetar Arquitetura de Sistemas:</strong></h4>
-<pre>
-   Capacidade de projetar a arquitetura de sistemas alinhada aos requisitos funcionais e não funcionais.
-</pre>
+## Conhecimentos Adquiridos
 
-<h4><strong>Desenvolvimento Integrado com Bancos de Dados Relacionais:</strong></h4>
-<pre>
-   Experiência no desenvolvimento integrado com bancos de dados relacionais.
-</pre>
+### Aquisição de Conhecimento Profundo
+Durante o desenvolvimento do projeto, aproveitei a oportunidade para adquirir um conhecimento aprofundado sobre sistemas de gerenciamento de banco de dados (SGBDs).
 
+### Manipulação Eficiente de Informações
+Desenvolvi habilidades para coletar e manipular informações de forma altamente eficiente, criando séries históricas e gerando métricas relevantes para os usuários.
+
+### Aprimoramento de Consultas SQL
+A experiência me permitiu aprimorar minha capacidade de criar consultas SQL, utilizando diversos comandos para extrair informações específicas e impactantes de forma eficaz.
+
+### Exploração de Ferramentas de Gerenciamento
+Tive a oportunidade de explorar e me familiarizar profundamente com ferramentas de gerenciamento de banco de dados, como o PostgreSQL, aplicando-as de forma excepcionalmente eficaz.
+
+### Coleta de Métricas Cruciais
+Criei consultas e rotinas que possibilitaram a coleta de métricas essenciais, como o dimensionamento de tabelas e bancos de dados, proporcionando insights valiosos aos usuários.
+
+### Aprofundamento nos Princípios Fundamentais
+Aprofundei minha compreensão dos princípios fundamentais que regem os SGBDs, destacando a importância de estruturar e organizar dados de maneira adequada para facilitar operações futuras.
+
+### Relevância da Otimização
+Reconheci a importância de otimizar consultas e operações de banco de dados para garantir um desempenho mais eficiente, resultando em uma experiência geral mais satisfatória para os usuários.
+
+### Atuação Além da Manipulação de Dados
+Minha atuação no projeto não se limitou à coleta e manipulação de dados, mas também envolveu a criação de um ambiente de banco de dados resiliente e otimizado.
+
+### Papel Essencial no Sucesso da Aplicação
+Esse trabalho teve um papel fundamental no sucesso da aplicação, contribuindo para a eficácia operacional e o bom desempenho da ferramenta.
+
+### Conhecimento Profundo e Base Sólida
+A experiência adquirida proporcionou um conhecimento profundo e uma base sólida, preparando-me para futuros projetos relacionados à gestão de dados e ao uso de SGBDs.
 <br>
 
 <details close></summary></summary>
 
-Clique [aqui](https://github.com/AndrewAugusto/Ibet_Assistente) para mais detalhes do Projeto.
-
+Clique [aqui](https://github.com/apibanco/Vigilant) para mais detalhes do prijeto.
+  
 </details>
 
 <br>
