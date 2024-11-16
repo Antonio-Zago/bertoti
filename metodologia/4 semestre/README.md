@@ -1,274 +1,266 @@
-## Projeto I - Assistente Ibet
+## Projeto IV - BoatHelp
 
 <details>
   
 <summary>
-         Mais Detalhes do Projeto I
+	Mais Detalhes do Projeto IV
 </summary>
 
-# Ibet - Assistente Virtual
+# BoatHelp - Sistema de abertura de chamados de suporte com níveis diferentes de acesso
 
-<br>
-     
-<img src ="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/1/2012/05/Logo-Fatec-1200x800-1.jpg" width="200" height="200"/>
+### Parceiro Acadêmico
+	
+<br/>
 
-##### *Figura 01. Logo Fatec - Profº Jassen Vidal*
+![image](https://static.wixstatic.com/media/28f919_850cdd0bc47d4fbd8aa3eeb79db23bf3~mv2.png/v1/fill/w_144,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Subiter_NovoLogoCol.png)
 
-   A FATEC (Faculdade de Tecnologia do Estado de São Paulo) é uma instituição pública estadual vinculada à Secretaria de Desenvolvimento Econômico do Estado de São Paulo. Criada com o objetivo de oferecer formação superior tecnológica de qualidade, a FATEC busca atender às demandas do mercado de trabalho e do desenvolvimento regional, oferecendo cursos voltados para a área de tecnologia, inovação e desenvolvimento.
-
-![image](https://github.com/criskurim/CodeYCode/blob/main/Imagens/logo-removebg-preview.png)
-
-##### *Figura 02. Logo do Projeto Ibet Assistente*
+##### *Figura 01. Logo Subiter Fonte([Subiter](https://www.subiter.com))*
 
 ### Visão do Projeto
 
-   A assistente virtual Ibet foi criada para oferecer aos usuários uma forma prática e eficiente de acessar informações sobre esportes. Ela disponibiliza uma série de recursos pensados para melhorar a experiência do usuário. Entre as funcionalidades oferecidas pela Ibet estão:
+Neste projeto, foi proposta a implementação de um sistema integrado para otimizar a gestão, abrangendo o cadastro de usuários, equipamentos e horários. A diversidade de perfis de usuários, como administradores, suporte e clientes, é fundamental para garantir a segurança e a eficiência nas operações.
 
-   <strong>Configuração de Alarmes para Jogos:</strong> A assistente permite que os usuários definam alarmes para serem alertados sobre jogos específicos, garantindo que eles fiquem atualizados em tempo real sobre as partidas de seu interesse.
+O foco principal do projeto está no gerenciamento de chamados, que é crucial para melhorar o atendimento. A ausência de um sistema integrado tem causado atrasos e dificuldades na resolução das demandas, afetando negativamente a satisfação dos clientes. A proposta inclui o acompanhamento completo de cada chamado, com o objetivo de não apenas resolver as questões rapidamente, mas também realizar uma análise detalhada de cada interação, gerando insights valiosos para a melhoria contínua dos processos.
 
-   <strong>Placar em Tempo Real:</strong> A Ibet apresenta placares atualizados ao vivo, permitindo que os usuários acompanhem os resultados das partidas enquanto acontecem, sem qualquer atraso.
-   
-   <strong>Acesso a Jogos Anteriores:</strong> Além de informações sobre eventos atuais, a Ibet também disponibiliza dados de jogos passados, oferecendo aos usuários a oportunidade de reviver momentos marcantes do esporte.
-
-   <strong>Vídeos e Conteúdo Relacionado:</strong> A ferramenta oferece uma variedade de vídeos e outros conteúdos sobre esportes, como entrevistas, resumos de jogos e análises, para que os usuários possam se aprofundar ainda mais nos acontecimentos esportivos.
-   
-   <strong>Interação por Comando de Voz:</strong> Um dos maiores diferenciais da Ibet é a possibilidade de interação por meio de comandos de voz. Isso permite que os usuários obtenham todas as informações desejadas sem a necessidade de digitar ou clicar, tornando a experiência mais prática e intuitiva.
-
-Link do repositório do projeto: [Repositório](https://github.com/AndrewAugusto/Ibet_Assistente)
-
-### Tecnologias adotadas no Projeto
+### Tecnologias adotadas na solução
 
 <div style="text-align: center;">
   <div style="margin-top: 10px; font-weight: bold;">BackEnd</div>
   <div style="display: inline_block">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" width="85" height="85" />
+    <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original-wordmark.svg" width="85" height="85" />
+    <img src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original-wordmark.svg" width="85" height="85" />
+  </div>
+</div>
+<div style="text-align: center;">
+  <div style="margin-top: 10px; font-weight: bold;">FrontEnd</div>
+  <div style="display: inline_block">
+    <img src="https://github.com/devicons/devicon/blob/master/icons/angularjs/angularjs-original-wordmark.svg" width="85" height="85" />
+    <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original-wordmark.svg" width="85" height="85" />  
+    <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original-wordmark.svg" width="85" height="85" />
   </div>
 </div>
 <div style="text-align: center;">
   <div style="margin-top: 10px; font-weight: bold;">Banco de Dados</div>
   <div style="display: inline_block">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/sqlite/sqlite-original.svg" width="85" height="85" />
+    <img src="https://github.com/devicons/devicon/blob/master/icons/sqlite/sqlite-original-wordmark.svg" width="85" height="85" />
   </div>
 </div>
 
-## Iniciativas Implementadas:
-  Participei ativamente do processo de criação da tela inicial da aplicação, contribuindo para o desenvolvimento de uma interface intuitiva e funcional.
-  Durante o processo, trabalhei na definição da organização dos elementos da tela, como botões, menus e informações chave, buscando sempre otimizar o fluxo de navegação e facilitar o acesso às funcionalidades principais. Também estive envolvido na escolha das cores, fontes e outros detalhes visuais, de forma a garantir uma identidade visual coesa e que estivesse alinhada com o propósito da aplicação.
-  
-<details open><summary>Informações sobre o desenvolvimento da tela de login</summary>
- 
-   1. Código da tela de login
+## Iniciativas Implementadas
+
+ - Tive uma participação ativa na criação do Front end da aplicação com a criação de diversas telas e a integração das mesmas com o back end
+    
+<details open><summary>Informações sobre a implementação do front end dos chamados dos clientes</summary>
      
-   ```python
+   ```html
    
-   class sm(ScreenManager):
-    def MudarPagina2(self):
-        self.current = 'p2'
-        self.nome = self.get_screen('pinicial').ids.nome.text
-        self.email = self.get_screen('pinicial').ids.email.text
-        self.get_screen('p2').ids.nome2.text = f'Olá {self.nome}, seu email: {self.email}'
-        
- 
-    def MudarPaginaInicial(self):
-        self.current = 'pinicial'
-class PaginaInicial(Screen):
-    pass
-class Pagina2(Screen):
-    pass
-class Tarefa(BoxLayout):
-    def __init__(self,text='',**kwargs):
-        super().__init__(**kwargs)
-        self.ids.nome2.text = text
-class teste(App):
-    def build(self):
-        return sm()
-if __name__ == "__main__":
-    teste().run()  
-	    
+	    <script>
+
+		import Chamado_Cliente from "../services/chamado_cliente";
+		import Vue from 'vue'
+		import { BootstrapVue } from 'bootstrap-vue'
+		import 'bootstrap/dist/css/bootstrap.css'
+		import 'bootstrap-vue/dist/bootstrap-vue.css'
+		
+		Vue.use(BootstrapVue)
+		
+		export default {
+		  name: "ChamadoClienteView",
+		  data() {
+		    return {
+		      chamado_clientes: [],
+		      chamado_cliente: {
+		        criticidadeChamado: "",
+		        dataChamado: "",
+		        assuntoChamado:"",
+		        descricaoChamado: "",
+		        situacaoChamado: "F",
+		        solucaoChamado: "",
+		      },
+		      solucao: ""
+		    };
+		  },
+		  mounted() {
+		    this.listar();
+		  },
+		  methods: {
+		    listar() {
+		      let token = JSON.parse(localStorage.getItem("authUser")).access_token;
+		      Chamado_Cliente.listar(token).then((resposta) => {
+		        const resp = resposta.data;
+		        const result = resp.filter(resp => resp.usuarioChamado.name === "Victor");
+		        this.chamado_clientes = result;
+		      });
+		    },
+		    deletar(id) {
+		      Chamado_Cliente.deletar(id).then(() => {
+		        this.listar();
+		        alert("Deletado com Sucesso");
+		      });
+		    },
+		    finalizar(chamado_cliente) {
+		      let token = JSON.parse(localStorage.getItem("authUser")).access_token;
+		      this.chamado_cliente.criticidadeChamado = chamado_cliente.criticidadeChamado;
+		      this.chamado_cliente.dataChamado = chamado_cliente.dataChamado;
+		      this.chamado_cliente.assuntoChamado = chamado_cliente.assuntoChamado;
+		      this.chamado_cliente.descricaoChamado = chamado_cliente.descricaoChamado;
+		      this.chamado_cliente.solucaoChamado = chamado_cliente.solucaoChamado;
+		      Chamado_Cliente.atualizar(this.chamado_cliente, chamado_cliente.id, token).then(()=>{
+		          alert('Atualizado com sucesso!');
+		          this.limparFormularios();
+		          this.listar();
+		        })
+		    },
+		    popularModal(solucao) {
+		      this.solucao = solucao;
+		    },
+		    salvar() {
+		      console.log(this.chamado_cliente)
+		      Chamado_Cliente.atualizar(this.chamado_cliente).then(() => {
+		        alert('Atualizado com sucesso!');
+		        this.limparFormularios();
+		        this.listar();
+		      })
+		    },
+		    limparFormularios() {
+		      this.chamado_cliente.usuarioChamado = "";
+		      this.chamado_cliente.criticidadeChamado = "";
+		      this.chamado_cliente.descricaoChamado = "";
+		      this.chamado_cliente.situacaoChamado = "";
+		    }
+		  },
+		};
+		</script>
+
    ```
-     
-   A classe principal, chamada sm, herda de ScreenManager, e é responsável pela troca entre as telas. Dentro dessa classe, há dois métodos principais. O método MudarPagina2 é usado para mudar para a segunda tela, p2. Além de mudar para essa tela, ele também coleta os dados inseridos na Tela Inicial (nome e email), que são então exibidos na Página 2. A linha de código que faz isso é responsável por atualizar um campo de texto específico, exibindo a mensagem "Olá [nome], seu email: [email]". O outro método, MudarPaginaInicial, muda a tela de volta para a Tela Inicial.
+   
+* listar(): Esse método é responsável por listar os chamados dos clientes. Ele começa recuperando o token de autenticação do usuário, que está armazenado no localStorage (provavelmente após um login). Esse token é passado para o método listar do serviço Chamado_Cliente. Quando a resposta é recebida, o método filtra os chamados para mostrar apenas aqueles onde o nome do usuário associado ao chamado é "Victor". O resultado é armazenado na propriedade chamado_clientes, que provavelmente é usada para exibir esses dados na interface do usuário.
 
-<img src="https://raw.githubusercontent.com/AndrewAugusto/Ibet_Assistente/7b919f2042e732cd0c0da1f7be25ed1b62b513f2/Tela%20inicial.gif" width="500" height="300" />
+* deletar(id): O método deletar recebe o id de um chamado que deve ser excluído. Ele chama o método deletar do serviço Chamado_Cliente passando o id do chamado a ser deletado. Após a exclusão ser realizada com sucesso, o método listar() é chamado novamente para atualizar a lista de chamados e um alerta é exibido para o usuário informando que a operação foi bem-sucedida.
 
-##### *Figura 03. Gif da tela inicial*
+* finalizar(chamado_cliente): O método finalizar é utilizado para atualizar um chamado já existente. Ele começa pegando o token de autenticação do usuário, similar ao que é feito no método listar(). Em seguida, os dados do chamado que precisam ser atualizados são atribuídos à propriedade chamado_cliente. O método atualizar do serviço Chamado_Cliente é chamado, passando o chamado_cliente atualizado e o id do chamado, além do token. Após a atualização ser concluída com sucesso, um alerta é exibido e a função listar() é chamada para refletir as mudanças na interface. Além disso, a função limparFormularios() é chamada, provavelmente para limpar os campos de entrada do formulário após a operação.
+
+* popularModal(solucao): Este método recebe uma solução como argumento e a atribui à propriedade solucao. O nome do método sugere que ele popula um modal (provavelmente uma janela de diálogo na interface do usuário) com a solução de um chamado, permitindo que o usuário visualize ou edite essa informação.
+
+* salvar(): O método salvar parece estar relacionado à atualização de um chamado com novas informações. Ele primeiro registra no console o objeto chamado_cliente atual, que provavelmente contém as mudanças feitas pelo usuário. Em seguida, o método atualizar do serviço Chamado_Cliente é chamado para atualizar o chamado no banco de dados. Após a atualização ser concluída com sucesso, um alerta é exibido e o método listar() é chamado para atualizar a lista de chamados na interface. Como no método finalizar, a função limparFormularios() é chamada para limpar os campos do formulário após a operação.
+
+</details>   
+
+
+ <details open><summary>Detalhes da tela de cadastro de novos chamados</summary>
+       
+   ```html
+   
+        <script>
+
+		import Chamado from "../services/chamado";
+		
+		export default {
+		  name: "CadastroUsuarioView",
+		
+		  data() {
+		    return {
+		      tiposChamado: [],
+		      mostrar: false,
+		      nome: "Victor",
+		      data: "",
+		      endereco: "",
+		      chamado: {
+		        usuarioChamado: {
+		          id: 1
+		        },
+		        tipoChamado: {
+		          id: 1
+		        },
+		        assuntoChamado: "",
+		        descricaoChamado: "",
+		        criticidadeChamado: "",
+		        situacaoChamado: "A",
+		        solucaoChamado: "Ainda não possui solução"
+		      }
+		    };
+		  },
+		
+		  mounted() {
+		    this.listarTiposChamado();
+		  },
+		
+		  methods: {
+		    salvar(){
+		      let token = JSON.parse(localStorage.getItem("authUser")).access_token;
+		
+		      Chamado.salvar(this.chamado, token).then(() => {
+		        alert('Salvo com sucesso');
+		        this.limparFormularios();
+		      });
+		    },
+		
+		    mostrarAgendamento(){
+		      if(this.chamado.tipoChamado.id === 1 || this.chamado.tipoChamado.id === 2){
+		        this.mostrar = true
+		      }else{
+		        this.mostrar = false
+		      }
+		    },
+		
+		    listarTiposChamado(){
+		      Chamado.listarTipoServico().then((resp) => {
+		        this.tiposChamado = resp.data;
+		      })
+		    },
+		
+		    limparFormularios() {
+		      this.chamado.descricaoChamado = "";
+		      this.chamado.assuntoChamado = "";
+		      this.data = "";
+		      this.endereco = "";
+		      this.chamado.criticidadeChamado = "";
+		      this.chamado.tipoChamado = "";
+		    }
+		    
+		  }
+		};
+		</script>
+         
+   ```
+Esse código é um componente Vue.js chamado CadastroUsuarioView, responsável por gerenciar o cadastro de chamados de usuários. O componente tem um conjunto de variáveis no objeto data(), que são utilizadas para armazenar as informações inseridas no formulário de cadastro, como o nome do usuário, a data, o endereço e os dados do chamado, incluindo o tipo, assunto, descrição, criticidade, situação e solução.
+
+Ao ser montado, o componente chama o método listarTiposChamado(), que faz uma requisição ao serviço Chamado para recuperar os tipos de chamados disponíveis. Esses tipos são então armazenados na variável tiposChamado, provavelmente usada para preencher um campo de seleção na interface. O componente também oferece uma lógica para controlar a exibição de um formulário de agendamento. Se o tipo de chamado selecionado for um dos tipos específicos (id 1 ou 2), o campo de agendamento será mostrado; caso contrário, ele é escondido.
+
+Quando o usuário clica no botão de salvar, o método salvar() é chamado. Esse método recupera o token de autenticação do usuário do localStorage, e com ele, chama o serviço Chamado.salvar() para salvar os dados do chamado. Após o chamado ser salvo com sucesso, o componente exibe um alerta de confirmação e limpa os campos do formulário através do método limparFormularios().
+
+Além disso, o componente mantém a função de limpar o formulário, que reseta todos os campos de entrada de dados para seus valores iniciais ou vazios, o que é útil após a criação de um chamado ou quando o usuário decide reiniciar o processo de cadastro.
+
+No geral, esse código cria uma interface de cadastro de chamados interativa, que lida com a coleta de dados do usuário, interage com a API backend para salvar os chamados e exibe os resultados de forma condicional, com base nos tipos de chamados selecionados.
 
 </details> 
 
- <details open><summary>Informações sobre o desenvolvimento do código para exibir agenda de jogos</summary>
-  
-   1. Trecho do código responsável por chamar o método para exibir a agenda e permitir ao usuário excluir ou inserir novas informações
-     
-   ```python
-   
-           
-    elif encontrar_comando('agenda', frase):
-        bet_pergunta = ("Aqui está sua agenda completa: ")
-        print(bet_pergunta)
-        sintese_voz(bet_pergunta)
-        agenda_c_bd.exibir_agenda()
-     while True:
-            bet_pergunta = ("O que deseja realizar com a agenda: ")
-            print(bet_pergunta)
-            sintese_voz(bet_pergunta)
-            termo_busca = ouvir_microfone()
-            if(encontrar_comando('inserir', termo_busca)):
-                bet_pergunta = ("Digite a data do jogo:  ")
-                print(bet_pergunta)
-                sintese_voz(bet_pergunta)
-                data = str(input('Data (dd/mm/aaaa): '))
-                    
-                bet_pergunta = ("Digite o horario do jogo? ")
-                print(bet_pergunta)
-                sintese_voz(bet_pergunta)
-                horario = str(input('Horario (hh:mm): '))
-                bet_pergunta = ("Fale o nome do primeiro time que irá jogar:  ")
-                print(bet_pergunta)
-                sintese_voz(bet_pergunta)
-                time1 = ouvir_microfone()
-                bet_pergunta = ("Fale o nome do segundo time que irá jogar:  ")
-                print(bet_pergunta)
-                sintese_voz(bet_pergunta)
-                time2 = ouvir_microfone()
-                print(f'{time1} x {time2}')
-                print(f'{data} --- {horario}')
-                while True:
-                    bet_pergunta = ("Deseja inserir esse jogo na agenda? ")
-                    print(bet_pergunta)
-                    sintese_voz(bet_pergunta)
-                    resposta = ouvir_microfone()
-                    if(encontrar_comando('sim', resposta)):
-                        agenda_c_bd.inserir_na_agenda(time1, time2, data, horario)
-                        break
-                    elif(encontrar_comando('não', resposta)):
-                        break
-                    else:
-                        continue
-                
-                break
-            elif(encontrar_comando('deletar', termo_busca)):
-                bet_pergunta = ("Digite o código do jogo para deletar: ")
-                print(bet_pergunta)
-                sintese_voz(bet_pergunta)
-                cod_deletar = str(input('Código: '))
-                agenda_c_bd.deletar_na_agenda(cod_deletar)
-                
-                break
-            else:
-                continue
-    
-   ```
+## Conhecimentos Adquiridos
 
-2. Trecho do código responsável por exibir, inserir e deletar da agenda de jogos do usuário
-     
-   ```python
-   
-
-         def exibir_agenda():
-             banco = sqlite3.connect('teste_agenda.db')
-             cursor = banco.cursor()
-             cursor.execute("SELECT time, data from agenda1")
-             for i in cursor:
-                 print (i)
-             banco.close()
-         def inserir_na_agenda(time, data):
-             try:
-                 banco = sqlite3.connect('teste_agenda.db')
-                 cursor = banco.cursor()
-                 cursor.execute("INSERT INTO agenda1 VALUES('"+time+"', '"+data+"')")
-                 banco.commit()
-                 banco.close()
-                 print("Agenda atualizada")
-             except sqlite3.Error as erro:
-                 print(f'Erro ao inserir: {erro}')
-             print()
-         def deletar_na_agenda(time):
-             try:
-                 banco = sqlite3.connect('teste_agenda.db')
-                 cursor = banco.cursor()
-                 cursor.execute("DELETE FROM agenda1 WHERE time = '"+time+"'")
-                 banco.commit()
-                 banco.close()
-                 print("Dados apagados com sucesso!")
-             except sqlite3.Error as erro:
-                 print(f'Erro ao excluir: {erro}')
-             print()
-         def atualizar_na_agenda(time, data):
-             banco = sqlite3.connect('teste_agenda.db')
-             cursor = banco.cursor()
-             cursor.execute("UPDATE agenda1 SET data = '"+data+"' WHERE time = '"+time+"'")
-             banco.commit()
-             banco.close()
-             print("Dados atualizados com sucesso")
-             print()
-    
-   ```
-	
-   - Esse trecho de código é responsável por conectar no banco de dados e realizar a consulta, inserção e exclusão de dados da agenda do usuário
-</details> 
-
-## Aprendizados Efetivos
-
-<h4><strong>Início com Python:</strong></h4>
-<pre>
-   Iniciei minha jornada com a linguagem de programação Python, abrindo portas para novas possibilidades.
-</pre>
-
-<h4><strong>Compreensão Profunda do Scrum:</strong></h4>
-<pre>
-   Adquiri uma compreensão profunda da metodologia ágil Scrum, aplicando seus princípios de forma prática.
-</pre>
-
-<h4><strong>Adoção do Paradigma Imperativo:</strong></h4>
-<pre>
-   Optei por adotar o paradigma de programação imperativo para construir meu projeto, utilizando uma abordagem estruturada.
-</pre>
-
-<h4><strong>Base Sólida em Lógica de Programação:</strong></h4>
-<pre>
-   Desenvolvi uma base sólida em lógica de programação, capacitando-me para resolver desafios computacionais de maneira eficaz.
-</pre>
-
-<h4><strong>Introdução e Uso de Estruturas de Dados:</strong></h4>
-<pre>
-   Introduzi e utilizei com sucesso as primeiras estruturas de dados em meu projeto, explorando as capacidades da linguagem Python.
-</pre>
-
-<h4><strong>Evolução das Habilidades de Comunicação:</strong></h4>
-<pre>
-   Minhas habilidades de comunicação estão em constante evolução, contribuindo para uma melhor interação com colegas.
-</pre>
-
-<h4><strong>Desenvolvimento Backend com Python:</strong></h4>
-<pre>
-   Desenvolvimento do backend com Python, criando aplicações robustas.
-</pre>
-
-<h4><strong>Criação de APIs:</strong></h4>
-<pre>
-   Criação de APIs para fornecer serviços e funcionalidades.
-</pre>
-
-<h4><strong>Versionamento de Código com Git:</strong></h4>
-<pre>
-   Domínio do versionamento de código com o uso do Git.
-</pre>
-
-<h4><strong>Projetar Arquitetura de Sistemas:</strong></h4>
-<pre>
-   Capacidade de projetar a arquitetura de sistemas alinhada aos requisitos funcionais e não funcionais.
-</pre>
-
-<h4><strong>Desenvolvimento Integrado com Bancos de Dados Relacionais:</strong></h4>
-<pre>
-   Experiência no desenvolvimento integrado com bancos de dados relacionais.
-</pre>
+#### Aprendizado do VueJs:
+    Adquiri habilidades no uso do VueJs, explorando suas funcionalidades e sintaxe.
+#### Consulta à Documentação Oficial:
+    Compreendi a importância de consultar a documentação oficial do VueJs para obter informações detalhadas e precisas sobre a tecnologia.
+#### Estudo Aprofundado:
+    Reconheci a necessidade de dedicar tempo a um estudo aprofundado para construir uma base sólida e confiável de conhecimento em VueJs.
+#### Noções Básicas vs. Complexidades:
+    Percebi que, embora os tutoriais sejam úteis para noções básicas, o estudo da documentação permitiu a compreensão das complexidades da tecnologia.
+#### Exploração de Recursos Avançados:
+    Aprofundei meu conhecimento explorando recursos avançados do VueJs, além do que é geralmente abordado em tutoriais introdutórios.
+#### Constante Busca por Novos Aprendizados:
+    Reforcei a importância de estar constantemente em busca de novos aprendizados para acompanhar as evoluções tecnológicas.
+#### Atualização sobre Tendências do Mercado:
+    Compreendi a necessidade de manter-me atualizado sobre as últimas tecnologias e tendências do mercado para permanecer relevante no cenário profissional.
+#### Desenvolvimento de Projeto Sofisticado:
+    Utilizando o conhecimento adquirido, desenvolvi um projeto mais sofisticado e eficaz, incorporando práticas avançadas do VueJs.
+#### Aquisição de Habilidades Valiosas:
+    Ao explorar a documentação e desenvolver um projeto mais complexo, adquiri habilidades valiosas que contribuíram significativamente para minha trajetória profissional.
 
 <br>
 
 <details close></summary></summary>
 
-Clique [aqui](https://github.com/AndrewAugusto/Ibet_Assistente) para mais detalhes do Projeto.
+Clique [aqui](https://github.com/Doc-Docker/APISubiter) para mais detalhes do projeto.
 
 </details>
 
