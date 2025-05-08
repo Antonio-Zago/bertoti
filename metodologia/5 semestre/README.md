@@ -6,7 +6,7 @@
 	Mais Detalhes do Projeto V
 </summary>
 
-# Sistema de análise de dados de recrutamento e seleção. Tem como objetivo oferecer insights valiosos
+# DataViz - Sistema de análise de dados de recrutamento e seleção. Tem como objetivo oferecer insights valiosos
 
 ### Parceiro Acadêmico
 	
@@ -157,7 +157,9 @@ public interface FatoContratacoesRepository extends JpaRepository<FatoContrataco
 }
    ```
 
-Nesse trecho da classe de repositório o método "RetornarTempoMedioProcessoSeletivo" é realizado um select para retornar o tempo médio de contratação por processo seletivo
+Nesse trecho da classe de repositório o método "RetornarTempoMedioProcessoSeletivo" é realizado um select para retornar o tempo médio de contratação por processo seletivo, utilizo uma função de soma do tempo médio e faço o agrupamento por processo seletivo e utilizo um filtro de inicio e fim. </br>
+O método "RetornarQuantidadeProcessoSeletivo" retorna o total de contratações realizadas por processo seletivo, e também faço um filtro por data inicio e fim.</br>
+O método "TempoMedioContratacoesPorVaga" retorna o tempo médio de contratações para cada vaga aberta no processo seletivo, nesse método é passado os parametros de mês e ano inicial e final
 
 </details> 
 
