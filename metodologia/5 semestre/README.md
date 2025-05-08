@@ -50,7 +50,7 @@ Personalização de relatórios conforme as necessidades específicas dos gestor
 ## Iniciativas Implementadas
 
  - Tive uma participação ativa na modelagem do esquema estrela do banco de dados, a partir das necessidades do cliente
- - ![image](https://github.com/user-attachments/assets/86838ff8-31cb-44c8-a80c-72fb44585aaa)
+![image](https://github.com/user-attachments/assets/86838ff8-31cb-44c8-a80c-72fb44585aaa)
 
     
 <details open><summary>Informações sobre a implementação de importação dos dados do cliente para o banco de dados</summary>
@@ -125,91 +125,39 @@ Personalização de relatórios conforme as necessidades específicas dos gestor
 </details>   
 
 
- <details open><summary>Detalhes da tela de cadastro de novos chamados</summary>
+ - Contribui com a implementação das rotinas para retornar as métricas de contratações e avaliações dos processos seletivos
+
+ <details open><summary>Detalhes das rotinas para retorno das métricas</summary>
        
-   ```html
-   
-        <script>
+   ```java
 
-		import Chamado from "../services/chamado";
-		
-		export default {
-		  name: "CadastroUsuarioView",
-		
-		  data() {
-		    return {
-		      tiposChamado: [],
-		      mostrar: false,
-		      nome: "Victor",
-		      data: "",
-		      endereco: "",
-		      chamado: {
-		        usuarioChamado: {
-		          id: 1
-		        },
-		        tipoChamado: {
-		          id: 1
-		        },
-		        assuntoChamado: "",
-		        descricaoChamado: "",
-		        criticidadeChamado: "",
-		        situacaoChamado: "A",
-		        solucaoChamado: "Ainda não possui solução"
-		      }
-		    };
-		  },
-		
-		  mounted() {
-		    this.listarTiposChamado();
-		  },
-		
-		  methods: {
-		    salvar(){
-		      let token = JSON.parse(localStorage.getItem("authUser")).access_token;
-		
-		      Chamado.salvar(this.chamado, token).then(() => {
-		        alert('Salvo com sucesso');
-		        this.limparFormularios();
-		      });
-		    },
-		
-		    mostrarAgendamento(){
-		      if(this.chamado.tipoChamado.id === 1 || this.chamado.tipoChamado.id === 2){
-		        this.mostrar = true
-		      }else{
-		        this.mostrar = false
-		      }
-		    },
-		
-		    listarTiposChamado(){
-		      Chamado.listarTipoServico().then((resp) => {
-		        this.tiposChamado = resp.data;
-		      })
-		    },
-		
-		    limparFormularios() {
-		      this.chamado.descricaoChamado = "";
-		      this.chamado.assuntoChamado = "";
-		      this.data = "";
-		      this.endereco = "";
-		      this.chamado.criticidadeChamado = "";
-		      this.chamado.tipoChamado = "";
-		    }
-		    
-		  }
-		};
-		</script>
-         
+@Repository
+public interface FatoContratacoesRepository extends JpaRepository<FatoContratacoes, Integer>{
+
+	 	@Query(nativeQuery = true, value =  "SELECT a.processo_seletivo, sum(a.tempo_medio) / count(a.processo_seletivo) tempo_medio, b.nome FROM fato_contratacoes a INNER JOIN dim_processo_seletivo b ON b.id_processo_seletivo = a.processo_seletivo WHERE (b.inicio_processo_seletivo < :fim || :fim is null) and (b.fim_processo_seletivo > :inicio or b.fim_processo_seletivo is null)  GROUP BY a.processo_seletivo")
+	    List<ProcessoSeletivoTempoMedioDto> RetornarTempoMedioProcessoSeletivo(@Param("inicio") LocalDateTime inicio, @Param("fim") Optional<LocalDateTime> fim);
+	
+	
+	    @Query(nativeQuery = true, value =  "SELECT a.processo_seletivo, b.nome, sum(a.quantidade) quantidade FROM fato_contratacoes a INNER JOIN dim_processo_seletivo b ON b.id_processo_seletivo = a.processo_seletivo WHERE (b.inicio_processo_seletivo < :fim || :fim is null) and (b.fim_processo_seletivo > :inicio or b.fim_processo_seletivo is null) GROUP BY a.processo_seletivo")
+	    List<ProcessoSeletivoQuantidadeDto> RetornarQuantidadeProcessoSeletivo(@Param("inicio") LocalDateTime inicio, @Param("fim") Optional<LocalDateTime> fim);
+
+@Query(nativeQuery = true, value = "SELECT v.titulo_vaga, AVG(f.tempo_medio) " +
+       "FROM fato_contratacoes f " +
+       "JOIN dim_vaga v ON f.vaga = v.id_vaga " +
+       "JOIN dim_tempo t ON f.tempo = t.id_tempo " +
+       "WHERE (t.ano > :anoInicial OR (t.ano = :anoInicial AND t.mes >= :mesInicial)) " +
+       "AND (t.ano < :anoFinal OR (t.ano = :anoFinal AND t.mes <= :mesFinal)) " +
+       "GROUP BY v.titulo_vaga")
+    List<Object[]> TempoMedioContratacoesPorVaga(
+        @Param("mesInicial") int mesInicial,
+        @Param("anoInicial") int anoInicial,
+        @Param("mesFinal") int mesFinal,
+        @Param("anoFinal") int anoFinal);
+
+}
    ```
-Esse código é um componente Vue.js chamado CadastroUsuarioView, responsável por gerenciar o cadastro de chamados de usuários. O componente tem um conjunto de variáveis no objeto data(), que são utilizadas para armazenar as informações inseridas no formulário de cadastro, como o nome do usuário, a data, o endereço e os dados do chamado, incluindo o tipo, assunto, descrição, criticidade, situação e solução.
 
-Ao ser montado, o componente chama o método listarTiposChamado(), que faz uma requisição ao serviço Chamado para recuperar os tipos de chamados disponíveis. Esses tipos são então armazenados na variável tiposChamado, provavelmente usada para preencher um campo de seleção na interface. O componente também oferece uma lógica para controlar a exibição de um formulário de agendamento. Se o tipo de chamado selecionado for um dos tipos específicos (id 1 ou 2), o campo de agendamento será mostrado; caso contrário, ele é escondido.
-
-Quando o usuário clica no botão de salvar, o método salvar() é chamado. Esse método recupera o token de autenticação do usuário do localStorage, e com ele, chama o serviço Chamado.salvar() para salvar os dados do chamado. Após o chamado ser salvo com sucesso, o componente exibe um alerta de confirmação e limpa os campos do formulário através do método limparFormularios().
-
-Além disso, o componente mantém a função de limpar o formulário, que reseta todos os campos de entrada de dados para seus valores iniciais ou vazios, o que é útil após a criação de um chamado ou quando o usuário decide reiniciar o processo de cadastro.
-
-No geral, esse código cria uma interface de cadastro de chamados interativa, que lida com a coleta de dados do usuário, interage com a API backend para salvar os chamados e exibe os resultados de forma condicional, com base nos tipos de chamados selecionados.
+Nesse trecho da classe de repositório o método "RetornarTempoMedioProcessoSeletivo" é realizado um select para retornar o tempo médio de contratação por processo seletivo
 
 </details> 
 
