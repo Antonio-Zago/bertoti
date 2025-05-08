@@ -1,148 +1,126 @@
-## Projeto IV - BoatHelp
+## Projeto V
 
 <details>
   
 <summary>
-	Mais Detalhes do Projeto IV
+	Mais Detalhes do Projeto V
 </summary>
 
-# BoatHelp - Sistema de abertura de chamados de suporte com níveis diferentes de acesso
+# Sistema de análise de dados de recrutamento e seleção. Tem como objetivo oferecer insights valiosos
 
 ### Parceiro Acadêmico
 	
 <br/>
 
-![image](https://static.wixstatic.com/media/28f919_850cdd0bc47d4fbd8aa3eeb79db23bf3~mv2.png/v1/fill/w_144,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Subiter_NovoLogoCol.png)
+![image]([https://pro4tech.com.br/assets/img/logo-p4t-navbar-branco.png](https://pro4tech.com.br/assets/img/logo-p4t-navbar-branco.png))
 
-##### *Figura 01. Logo Subiter Fonte([Subiter](https://www.subiter.com))*
+##### *Figura 01. Logo Pro4Tech Fonte([Subiter](https://pro4tech.com.br/))*
 
 ### Visão do Projeto
 
-Neste projeto, foi proposta a implementação de um sistema integrado para otimizar a gestão, abrangendo o cadastro de usuários, equipamentos e horários. A diversidade de perfis de usuários, como administradores, suporte e clientes, é fundamental para garantir a segurança e a eficiência nas operações.
+Neste projeto, foi proposta a implementação de um sistema para otimizar a maneira como os dados de recrutamento são coletados, visualizados e analisados visando centralizar e visualizar dados dispersos, permitir uma tomada de decisão estratégica, gerar relatórios personalizados e automatizar processos manuais, além de possibilitar a integração de dados de diferentes fontes.
 
-O foco principal do projeto está no gerenciamento de chamados, que é crucial para melhorar o atendimento. A ausência de um sistema integrado tem causado atrasos e dificuldades na resolução das demandas, afetando negativamente a satisfação dos clientes. A proposta inclui o acompanhamento completo de cada chamado, com o objetivo de não apenas resolver as questões rapidamente, mas também realizar uma análise detalhada de cada interação, gerando insights valiosos para a melhoria contínua dos processos.
+O foco principal do projeto é fornecer insights valiosos a partir de métricas de eficiência no recrutamento (ex. tempo médio de contratação, quantidade de contratações por processo seletivo).
+Identificação de padrões e tendências para otimizar o processo de seleção.
+Personalização de relatórios conforme as necessidades específicas dos gestores.
 
 ### Tecnologias adotadas na solução
 
 <div style="text-align: center;">
   <div style="margin-top: 10px; font-weight: bold;">BackEnd</div>
   <div style="display: inline_block">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original-wordmark.svg" width="85" height="85" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" width="85" height="85" />
     <img src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original-wordmark.svg" width="85" height="85" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg" width="85" height="85" />
   </div>
 </div>
 <div style="text-align: center;">
   <div style="margin-top: 10px; font-weight: bold;">FrontEnd</div>
   <div style="display: inline_block">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/angularjs/angularjs-original-wordmark.svg" width="85" height="85" />
-    <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original-wordmark.svg" width="85" height="85" />  
-    <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-original-wordmark.svg" width="85" height="85" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" width="85" height="85" />
   </div>
 </div>
 <div style="text-align: center;">
   <div style="margin-top: 10px; font-weight: bold;">Banco de Dados</div>
   <div style="display: inline_block">
-    <img src="https://github.com/devicons/devicon/blob/master/icons/sqlite/sqlite-original-wordmark.svg" width="85" height="85" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" width="85" height="85" />
   </div>
 </div>
 
 ## Iniciativas Implementadas
 
- - Tive uma participação ativa na criação do Front end da aplicação com a criação de diversas telas e a integração das mesmas com o back end
-    
-<details open><summary>Informações sobre a implementação do front end dos chamados dos clientes</summary>
-     
-   ```html
-   
-	    <script>
+ - Tive uma participação ativa na modelagem do esquema estrela do banco de dados, a partir das necessidades do cliente
+ - ![image](https://github.com/user-attachments/assets/86838ff8-31cb-44c8-a80c-72fb44585aaa)
 
-		import Chamado_Cliente from "../services/chamado_cliente";
-		import Vue from 'vue'
-		import { BootstrapVue } from 'bootstrap-vue'
-		import 'bootstrap/dist/css/bootstrap.css'
-		import 'bootstrap-vue/dist/bootstrap-vue.css'
+    
+<details open><summary>Informações sobre a implementação de importação dos dados do cliente para o banco de dados</summary>
+     
+   ```java
+		public void Salvar(String arquivo){
+
+		Dataset<Row> dadosPlanilha = spark
+				.read()
+				.format("csv")
+				.option("header", true)
+				.option("delimiter", ";")
+				.load(arquivo);
+
+
+		var dadosPlanilhaTratados = dadosPlanilha
+		.withColumn("idTempo", functions.row_number().over(Window.orderBy("idProcessoSeletivo")))
+        .withColumn("mes", functions.month( functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")))
+		.withColumn("ano", functions.year( functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")))
+        .withColumn("semestre", functions.when(
+        		functions.month(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")).between(1, 6), 1)
+        		.when(functions.month(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")).between(7, 12), 2))
+        .withColumn("trimestre", functions.when(
+        		functions.month(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")).between(1, 4), 1)
+        		.when(functions.month(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")).between(5, 8), 2)
+        		.when(functions.month(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy")).between(9, 12), 3))
+		.withColumn("idProcessoSeletivo", functions.col("idProcessoSeletivo").cast("long"))
+        .withColumn("nome", functions.col("nome"))
+		.withColumn("status", functions.col("status"))
+        .withColumn("descricao", functions.col("descricao"))
+		.withColumn("criadoPor",functions.col("criadoPor"))
+		.withColumn("tempoMedio", functions.col("idProcessoSeletivo").cast("long"))
+		.withColumn("date_diff", functions.datediff(functions.to_date(functions.col("datacontratacao"), "dd/MM/yyyy"), functions.to_date(functions.col("datainiciovaga"), "dd/MM/yyyy")))
+		.withColumn("idParticipanteRH", functions.col("idParticipanteRH").cast("long"))
+		.withColumn("cargo", functions.col("cargo"))
+		.withColumn("idVaga", functions.col("idVaga").cast("long"))
+		.withColumn("titulovaga", functions.col("titulovaga"))
+		.withColumn("numeroposicoes", functions.col("numeroposicoes").cast("integer"))
+		.withColumn("requisitosvagas", functions.col("requisitosvagas"))
+		.withColumn("estado", functions.col("estado"))
+		.withColumn("dataCriacao", functions.to_date(functions.col("dataCriacao"), "dd/MM/yyyy"))
+		.withColumn("inicioProcessoSeletivo", functions.to_date(functions.col("inicioProcessoSeletivo"), "dd/MM/yyyy"))
+		.withColumn("fimProcessoSeletivo", functions.to_date(functions.col("fimProcessoSeletivo"), "dd/MM/yyyy"))
+		.withColumn("idCandidato", functions.col("idCandidato").cast("long"))
+		.withColumn("nomeCandidato", functions.col("nomeCandidato"))
+		.withColumn("idCriterio", functions.col("idCriterio").cast("long"))
+		.withColumn("nomeCriterio", functions.col("nomeCriterio"))
+		.withColumn("pontuacao", functions.col("pontuacao").cast("long"));
+
+
+
+		var temposDs = serviceTempo.SalvarDatas(dadosPlanilhaTratados);
+
+		service.SalvarProcessosSeletivos(temposDs);
+
+		serviceParticipantesRH.SalvarParticipantesRH(temposDs);
+
+		serviceVagas.SalvarVagas(temposDs);
 		
-		Vue.use(BootstrapVue)
+		serviceCriterios.SalvarCriterios(temposDs);
 		
-		export default {
-		  name: "ChamadoClienteView",
-		  data() {
-		    return {
-		      chamado_clientes: [],
-		      chamado_cliente: {
-		        criticidadeChamado: "",
-		        dataChamado: "",
-		        assuntoChamado:"",
-		        descricaoChamado: "",
-		        situacaoChamado: "F",
-		        solucaoChamado: "",
-		      },
-		      solucao: ""
-		    };
-		  },
-		  mounted() {
-		    this.listar();
-		  },
-		  methods: {
-		    listar() {
-		      let token = JSON.parse(localStorage.getItem("authUser")).access_token;
-		      Chamado_Cliente.listar(token).then((resposta) => {
-		        const resp = resposta.data;
-		        const result = resp.filter(resp => resp.usuarioChamado.name === "Victor");
-		        this.chamado_clientes = result;
-		      });
-		    },
-		    deletar(id) {
-		      Chamado_Cliente.deletar(id).then(() => {
-		        this.listar();
-		        alert("Deletado com Sucesso");
-		      });
-		    },
-		    finalizar(chamado_cliente) {
-		      let token = JSON.parse(localStorage.getItem("authUser")).access_token;
-		      this.chamado_cliente.criticidadeChamado = chamado_cliente.criticidadeChamado;
-		      this.chamado_cliente.dataChamado = chamado_cliente.dataChamado;
-		      this.chamado_cliente.assuntoChamado = chamado_cliente.assuntoChamado;
-		      this.chamado_cliente.descricaoChamado = chamado_cliente.descricaoChamado;
-		      this.chamado_cliente.solucaoChamado = chamado_cliente.solucaoChamado;
-		      Chamado_Cliente.atualizar(this.chamado_cliente, chamado_cliente.id, token).then(()=>{
-		          alert('Atualizado com sucesso!');
-		          this.limparFormularios();
-		          this.listar();
-		        })
-		    },
-		    popularModal(solucao) {
-		      this.solucao = solucao;
-		    },
-		    salvar() {
-		      console.log(this.chamado_cliente)
-		      Chamado_Cliente.atualizar(this.chamado_cliente).then(() => {
-		        alert('Atualizado com sucesso!');
-		        this.limparFormularios();
-		        this.listar();
-		      })
-		    },
-		    limparFormularios() {
-		      this.chamado_cliente.usuarioChamado = "";
-		      this.chamado_cliente.criticidadeChamado = "";
-		      this.chamado_cliente.descricaoChamado = "";
-		      this.chamado_cliente.situacaoChamado = "";
-		    }
-		  },
-		};
-		</script>
+		serviceCandidatos.SalvarCandidatos(temposDs);
+
+		serviceContratacoes.SalvarContratacoes(temposDs);
+		
+		serviceAvaliacoes.SalvarAvaliacoes(temposDs);
 
    ```
    
-* listar(): Esse método é responsável por listar os chamados dos clientes. Ele começa recuperando o token de autenticação do usuário, que está armazenado no localStorage (provavelmente após um login). Esse token é passado para o método listar do serviço Chamado_Cliente. Quando a resposta é recebida, o método filtra os chamados para mostrar apenas aqueles onde o nome do usuário associado ao chamado é "Victor". O resultado é armazenado na propriedade chamado_clientes, que provavelmente é usada para exibir esses dados na interface do usuário.
-
-* deletar(id): O método deletar recebe o id de um chamado que deve ser excluído. Ele chama o método deletar do serviço Chamado_Cliente passando o id do chamado a ser deletado. Após a exclusão ser realizada com sucesso, o método listar() é chamado novamente para atualizar a lista de chamados e um alerta é exibido para o usuário informando que a operação foi bem-sucedida.
-
-* finalizar(chamado_cliente): O método finalizar é utilizado para atualizar um chamado já existente. Ele começa pegando o token de autenticação do usuário, similar ao que é feito no método listar(). Em seguida, os dados do chamado que precisam ser atualizados são atribuídos à propriedade chamado_cliente. O método atualizar do serviço Chamado_Cliente é chamado, passando o chamado_cliente atualizado e o id do chamado, além do token. Após a atualização ser concluída com sucesso, um alerta é exibido e a função listar() é chamada para refletir as mudanças na interface. Além disso, a função limparFormularios() é chamada, provavelmente para limpar os campos de entrada do formulário após a operação.
-
-* popularModal(solucao): Este método recebe uma solução como argumento e a atribui à propriedade solucao. O nome do método sugere que ele popula um modal (provavelmente uma janela de diálogo na interface do usuário) com a solução de um chamado, permitindo que o usuário visualize ou edite essa informação.
-
-* salvar(): O método salvar parece estar relacionado à atualização de um chamado com novas informações. Ele primeiro registra no console o objeto chamado_cliente atual, que provavelmente contém as mudanças feitas pelo usuário. Em seguida, o método atualizar do serviço Chamado_Cliente é chamado para atualizar o chamado no banco de dados. Após a atualização ser concluída com sucesso, um alerta é exibido e o método listar() é chamado para atualizar a lista de chamados na interface. Como no método finalizar, a função limparFormularios() é chamada para limpar os campos do formulário após a operação.
+* Salvar(): Nesse método são carregados os dados da planilha através de uma instância do Spark e feito o mapeamento das colunas da planilha com os campos das tabelas no banco de dados utilizando os métodos “withColumn”  do framework. Um ponto importante a ressaltar é relativo a salvar os registros das tabelas de fatos do modelo, para isso foi necessário agrupar os registros das tabelas de dimensão e realizar um tratamento para obter as medidas previstas no modelo estrela.
 
 </details>   
 
