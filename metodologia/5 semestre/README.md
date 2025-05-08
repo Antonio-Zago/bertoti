@@ -49,8 +49,20 @@ Personalização de relatórios conforme as necessidades específicas dos gestor
 
 ## Iniciativas Implementadas
 
- - Tive uma participação ativa na modelagem do esquema estrela do banco de dados, a partir das necessidades do cliente
-![image](https://github.com/user-attachments/assets/86838ff8-31cb-44c8-a80c-72fb44585aaa)
+
+<details open><summary>Informações sobre a modelagem estrela realizada no projeto</summary>
+     
+  ![image](https://github.com/user-attachments/assets/86838ff8-31cb-44c8-a80c-72fb44585aaa)
+   
+* Tive uma participação ativa na modelagem do esquema estrela do banco de dados, foi necessário identificar as principais necessidades do cliente referentes aos pontos em que deveriamos analisar, a partir disso definimos as principais questões a serem respodidas a partir da modelagem, são elas: </br>
+	* Tempo médio em dias de contratações realizadas em um determinado período  
+	* Quantidade de contratações por processo seletivo em determinado período  
+	* Quantidade de contratações por participante de RH por período 
+	* Quantidade de vagas por participante de RH  
+	* Análise da pontuação de candidatos por critério de avaliação  
+	* Quantidade de pontos por critério de avaliação para cada candidato por vaga 
+
+</details>  
 
     
 <details open><summary>Informações sobre a implementação de importação dos dados do cliente para o banco de dados</summary>
@@ -124,9 +136,6 @@ Personalização de relatórios conforme as necessidades específicas dos gestor
 
 </details>   
 
-
- - Contribui com a implementação das rotinas para retornar as métricas de contratações e avaliações dos processos seletivos
-
  <details open><summary>Detalhes das rotinas para retorno das métricas</summary>
        
    ```java
@@ -163,10 +172,249 @@ O método "TempoMedioContratacoesPorVaga" retorna o tempo médio de contrataçõ
 
 </details> 
 
+ <details open><summary>Detalhes do componente para renderizar o gráfico de tempo médio de contratações</summary>
+       
+   ```Vue
+
+<template>
+    <div>
+        <h1 class="titulo">Tempo Médio de Contratação por Processo Seletivo</h1>
+        <column-chart :data="chartData" :colors="['#3903fc', '#e88700', '#3903fc']"></column-chart>
+        <div class="export-buttons">
+            <button @click="exportExcel">XLSX</button>
+            <button @click="exportPdf">PDF</button>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'TempoMedioDeContratacaoPorProcessoSeletivo',
+    data() {
+        return {
+            chartData: []
+        };
+    },
+    async mounted() {
+        await this.fetchData();
+    },
+    methods: {
+        async fetchData() {
+            try {
+                const response = await fetch(`${import.meta.env.VITE_BASE_API_URL}/fatoContratacoes`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                this.transformData(data);
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+            }
+        },
+        transformData(data) {
+            this.chartData = data.reduce((acc, curr) => {
+                acc[curr.nome] = curr.tempo_medio;
+                return acc;
+            }, {});
+            console.log(this.chartData);
+        },
+        async exportExcel() {
+            try {
+                const response = await fetch(`${import.meta.env.VITE_BASE_API_URL}/excel/tempo`, {
+                    method: 'GET',
+                });
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'tempo.xlsx';
+                link.click();
+                URL.revokeObjectURL(url);
+            } catch (error) {
+                console.error('Erro ao exportar Excel:', error);
+            }
+        },
+        async exportPdf() {
+            try {
+                const response = await fetch(`${import.meta.env.VITE_BASE_API_URL}/pdf/tempo`, {
+                    method: 'GET',
+                });
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'tempo.pdf';
+                link.click();
+                URL.revokeObjectURL(url);
+            } catch (error) {
+                console.error('Erro ao exportar PDF:', error);
+            }
+        }
+    }
+};
+</script>
+
+   ```
+
+Nesse trecho do componente de gráfico do tempo médio de contratação por processo seletivo é realizado uma requisição para o endpoint e renderizado em um gráfico de colunas utilizando a tag <column-chart>, passando os dados retornados da API
+
+</details> 
+
+ <details open><summary>Detalhes do componente para renderizar a lista de quantidade de contratações por processo seletivo</summary>
+       
+   ```Vue
+<template>
+  <div>
+    <h1 class="titulo">Quantidade de Contratações por Processo Seletivo</h1>
+
+    <div class="filtros">
+      <div class="filtro-item">
+        <label for="mesInicial">Mês Inicial:</label>
+        <select id="mesInicial" v-model="mesInicial" @change="fetchData">
+          <option v-for="mes in meses" :key="mes.numero" :value="mes.numero">
+            {{ mes.numero }}
+          </option>
+        </select>
+      </div>
+
+      <div class="filtro-item">
+        <label for="anoInicial">Ano Inicial:</label>
+        <select id="anoInicial" v-model="anoInicial" @change="fetchData">
+          <option v-for="ano in anos" :key="ano.numero" :value="ano.numero">
+            {{ ano.numero }}
+          </option>
+        </select>
+      </div>
+
+      <div class="filtro-item">
+        <label for="mesFinal">Mês Final:</label>
+        <select id="mesFinal" v-model="mesFinal" @change="fetchData">
+          <option v-for="mes in meses" :key="mes.numero" :value="mes.numero">
+            {{ mes.numero }}
+          </option>
+        </select>
+      </div>
+
+      <div class="filtro-item">
+        <label for="anoFinal">Ano Final:</label>
+        <select id="anoFinal" v-model="anoFinal" @change="fetchData">
+          <option v-for="ano in anos" :key="ano.numero" :value="ano.numero">
+            {{ ano.numero }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <bar-chart :data="chartData" :colors="['#019cbb', '#3a6aaa', '#019cbb']"></bar-chart>
+
+    <div class="export-buttons">
+      <button @click="exportExcel">XLSX</button>
+      <button @click="exportPdf">PDF</button>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'QuantidadeDeProcessoSeletivo',
+  data() {
+    return {
+      chartData: [],
+      mesInicial: 1,
+      anoInicial: 2024,
+      mesFinal: 12,
+      anoFinal: 2024,
+      meses: [
+        { numero: 1 },
+        { numero: 2 },
+        { numero: 3 },
+        { numero: 4 },
+        { numero: 5 },
+        { numero: 6 },
+        { numero: 7 },
+        { numero: 8 },
+        { numero: 9 },
+        { numero: 10 },
+        { numero: 11 },
+        { numero: 12 }
+      ],
+      anos: [
+        { numero: 2023 },
+        { numero: 2024 },
+        { numero: 2025 }
+      ]
+    };
+  },
+  async mounted() {
+    await this.fetchData();
+  },
+  methods: {
+    async fetchData() {
+      try {
+        const dataInicial = `${this.anoInicial}-${this.mesInicial.toString().padStart(2, '0')}-01T00:00:00`;
+        const dataFinal = `${this.anoFinal}-${this.mesFinal.toString().padStart(2, '0')}-01T00:00:00`;
+        const url = `${import.meta.env.VITE_BASE_API_URL}/fatoContratacoes/quantidade?inicio=${dataInicial}&fim=${dataFinal}`;
+        
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log(data);
+        this.transformData(data);
+      } catch (error) {
+        console.error('Erro ao buscar dados:', error);
+      }
+    },
+    transformData(data) {
+      this.chartData = data.map(item => [item.nome, item.quantidade]);
+    },
+    async exportExcel() {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_BASE_API_URL}/excel/processosSeletivos`, {
+          method: 'GET',
+        });
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'ProcessosSeletivos.xlsx';
+        link.click();
+        URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error('Erro ao exportar Excel:', error);
+      }
+    },
+    async exportPdf() {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_BASE_API_URL}/pdf/processosSeletivos`, {
+          method: 'GET',
+        });
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'ProcessosSeletivos.pdf';
+        link.click();
+        URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error('Erro ao exportar PDF:', error);
+      }
+    }
+  }
+};
+</script>
+
+   ```
+
+Nesse trecho do componente que lista a quatidade de contratações por processo seletivo é realizado uma requisição para o endpoint e renderizado em uma lista o retorno da API
+
+</details> 
+
 ## Conhecimentos Adquiridos
 
 #### Aprendizado do VueJs:
-    Adquiri habilidades no uso do VueJs, explorando suas funcionalidades e sintaxe.
+    Adquiri habilidades no uso do VueJs, explorando suas funcionalidades e sintaxe, além de aprender a renderizar gráficos e dashboards.
 #### Consulta à Documentação Oficial:
     Compreendi a importância de consultar a documentação oficial do VueJs para obter informações detalhadas e precisas sobre a tecnologia.
 #### Estudo Aprofundado:
